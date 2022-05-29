@@ -1,0 +1,18 @@
+.pageLink {
+    color: black;
+    margin-right: 10px;
+}
+
+.activePageLink {
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #4B4B4B;
+}
+
+.header img {
+    height: 10vh;
+}

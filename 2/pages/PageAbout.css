@@ -1,0 +1,52 @@
+.photoWrapper {
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+.photoWrapper h1 {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 41px;
+    color: #504A40;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.photoWrapper a {
+    display: flex;
+    width: 250px;
+    max-width: 100%;
+    padding: 0 5px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 10px;
+}
+
+.photoWrapper img {
+    width: 250px;
+}
+
+.photoWrapper .header-round {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    color: #504A40;
+    font-weight: 500;
+}
+
+.photoWrapper .desk-round {
+    font-size: 19px;
+    line-height: 26px;
+    text-align: center;
+    font-weight: 300;
+    color: #504A40;
+}
