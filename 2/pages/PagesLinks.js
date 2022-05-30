@@ -14,7 +14,7 @@ class PagesLinks extends React.Component {
         </NavLink>
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>Главная</NavLink>
         <NavLink to="/company" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>О компании</NavLink>
-        <NavLink to="/clients" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>Клиенты</NavLink>
+        <NavLink to="/basket" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>Корзина</NavLink>
       </div>
     );
 

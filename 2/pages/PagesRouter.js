@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Page_About from './Page_About';
 import Page_Company from './Page_Company';
-import Page_Clients from './Page_Clients';
+import Page_Basket from './Page_Basket';
 import Page_Client from './Page_Client';
 
 class PagesRouter extends React.Component {
@@ -14,7 +14,7 @@ class PagesRouter extends React.Component {
       <Routes>
         <Route path="/" element={<Page_About/>} />
         <Route path="/company" element={<Page_Company/>} />
-        <Route path="/clients" element={<Page_Clients/>} />
+        <Route path="/basket" element={<Page_Basket/>} />
         <Route path="/client/:clid" element={<Page_Client/>} />
       </Routes>
     );

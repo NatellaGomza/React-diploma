@@ -20,7 +20,7 @@ class Category extends React.PureComponent {
     console.log("fdgfd");
     return (
       <div className='photoWrapper'>
-        <NavLink to={"optika" + this.props.info.url}>
+        <NavLink to={"/optika/" + this.props.info.url}>
           <img src={this.props.info.src} alt={this.props.info.name} />
           <span className="header-round">{this.props.info.header}</span>
           <span className="desk-round">{this.props.info.age}</span>
