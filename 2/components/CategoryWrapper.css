@@ -1,17 +1,22 @@
-﻿.MobileCompany
-{
-  border: double gray 3px;
-  width: 180px;
-  padding: 3px 7px;
-  background-color: lightyellow;
+﻿.header {
+    display: flex;
+    justify-content: space-between;
+    color: #4B4B4B;
 }
 
-.MobileCompanyName
-{
-  font-weight: bold;
+.header .logo {
+    width: 30vw;
+    height: 20vh;
 }
 
-.MobileCompanyClients
-{
-  padding-top: 5px;
+.categoryWrapper h1 {
+    text-align: center;
+    font-size: 3vw;
+}
+.categories {
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
 }

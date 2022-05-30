@@ -7,7 +7,7 @@ let data={
         {id: 2, url:"dlya-devochek", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_girl.jpg", header:"ОЧКИ ДЛЯ ДЕВОЧЕК", age:"от 4-х до 12 лет", name:"Очки для девочек" }, 
         {id: 3, url:"dlya-malchikov", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_boy_22.jpg", header:"ОЧКИ ДЛЯ МАЛЬЧИКОВ", age:"от 4-х до 12 лет", name:"Очки для мальчиков"}, 
         {id: 4, url:"dlya-podrostkov", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_girl_chb.jpg", header:"СТИЛЬНЫЕ ОЧКИ ДЛЯ ПОДРОСТКОВ", age:"от 13-ти до 18 лет", name:"Стильные очки для подростков"},
-        {id: 5, url:"", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_boy_sunglasses.jpg", header:"Мальчики и девочки", age:"от 0 до 18 лет", name:"Все модели"},  
+        {id: 5, url:"", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_boy_sunglasses.jpg", header:"МАЛЬЧИКИ И ДЕВОЧКИ", age:"от 0 до 18 лет", name:"Все модели"},  
     ],
     products: [
         {id: 1, category: "opravy-2-3-goda", producer:"Hello Kitty (Франция)", model:"Оправа для девочки AA101с14", url:"https://www.optikakids.by/wp-content/uploads/2021/11/hkaa101c14-44-16-120.jpg"},

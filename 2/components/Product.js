@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Category.css';
+import './Product.css';
 
 class Product extends React.PureComponent {
 
@@ -19,8 +19,10 @@ class Product extends React.PureComponent {
         return (
             <div className='item'>
                 <img src={this.props.info.url} alt={this.props.info.model} />
-                <span className="header-round">{this.props.info.producer}</span>
-                <span className="desk-round">{this.props.info.model}</span>
+                <span className="producer">{this.props.info.producer}</span>
+                <span className="model">{this.props.info.model}</span>
+                {/* <input type="button" className="addingButton" value="Добавить в корзину"></input> */}
+                <button className="addingButton">Добавить в корзину</button>
             </div>
         );
     }

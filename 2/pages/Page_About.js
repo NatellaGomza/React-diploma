@@ -4,8 +4,6 @@ import CategoryWrapper from '../components/CategoryWrapper';
 
 import appData from '../appData';
 
-import './PageAbout.css';
-
 class Page_About extends React.PureComponent {
 
   render() {

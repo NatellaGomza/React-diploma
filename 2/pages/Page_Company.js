@@ -1,23 +1,22 @@
 import React from 'react';
 
-import MobileCompany from '../components/MobileCompany';
+import Company from '../components/Company';
 
-import appData from '../appData';
+let companyDescription = require('../about.json')
 
 class Page_Company extends React.PureComponent {
-          
-  render() {
 
+  render() {
+console.log(companyDescription);
     return (
-      <MobileCompany 
-        name={appData.companyName}
-        clients={appData.clientsArr}
-      />
+      <div>
+        <Company header={companyDescription.header}
+        text={companyDescription.text}/>
+      </div>
     );
-    
+
   }
 
 }
-    
+
 export default Page_Company;
-    

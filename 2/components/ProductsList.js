@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 
 import Product from './Product';
+import './ProductsList.css';
 
 class ProductsList extends React.PureComponent {
 
@@ -19,7 +20,6 @@ class ProductsList extends React.PureComponent {
 
   render() {
 
-    console.log(this.props.item);
     let item = this.props.item.map(el =>
       <Product key={el.id} info={el} />
     );
