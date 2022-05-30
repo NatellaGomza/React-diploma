@@ -16,8 +16,6 @@ class Product extends React.PureComponent {
     };
 
     render() {
-
-        console.log(this.props.info);
         return (
             <div className='item'>
                 <img src={this.props.info.url} alt={this.props.info.model} />
