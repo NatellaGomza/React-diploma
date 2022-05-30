@@ -9,7 +9,6 @@ import './PageAbout.css';
 class Page_About extends React.PureComponent {
 
   render() {
-console.log(appData.header);
     return (
       <CategoryWrapper
         header={appData.header}

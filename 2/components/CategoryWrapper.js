@@ -23,8 +23,7 @@ class CategoryWrapper extends React.PureComponent {
   render() {
 
     let category=this.props.categories.map( el => 
-      {console.log(el);
-     return <Category key={el.id} info={el}  />}
+    <Category key={el.id} info={el}  />
     );
 
     return (
