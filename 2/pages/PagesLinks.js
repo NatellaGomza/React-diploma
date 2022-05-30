@@ -8,7 +8,7 @@ class PagesLinks extends React.Component {
   render() {
 
     return (
-      <div class="header">
+      <div className="header">
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>
           <img src="https://www.optikakids.by/wp-content/themes/optikakids/img/logo1.png" alt="Company Logo" />
         </NavLink>

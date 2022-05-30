@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MobileClients from '../components/MobileClients';
+import CategoryWrapper from '../components/CategoryWrapper';
 
 import appData from '../appData';
 
@@ -9,9 +9,9 @@ class Page_Company extends React.PureComponent {
   render() {
 
     return (
-      <MobileClients
-        name={appData.companyName}
-        clients={appData.clientsArr}
+      <CategoryWrapper
+        header={appData.header}
+        categories={appData.categoryInfo}
       />
     );
     
