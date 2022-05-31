@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Product.css';
+import { addToBasket } from './events';
 
 class Product extends React.PureComponent {
 
@@ -15,46 +16,57 @@ class Product extends React.PureComponent {
         }),
     };
 
-    dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
-    dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
-    updatePassword = null;
-    data = [];
+    state = {
+        inBasket: false,
+    };
 
-    addToCart = () => {
-        this.updatePassword = Math.random();
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-            data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
-            success: this.lockGetReady, error: this.errorHandler
-        });
+    addToCart = () => {      
+        let newProduct = this.props.info;
+        addToBasket.emit("newProduct", newProduct);
     }
 
-    lockGetReady = (callresult) => {
-        let product = this.props.info;
+    // dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
+    // dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
+    // updatePassword = null;
+    // data = [];
+    // itemsForBasket = [];
 
-        if (product) {
-          this.data = JSON.parse(callresult.result);
-          if (this.data) {
-            this.data.push(product);
-          } 
-        }
+    // addToCart = () => {
+    //     this.updatePassword = Math.random();
+    //     $.ajax({
+    //         url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
+    //         data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
+    //         success: this.lockGetReady, error: this.errorHandler
+    //     });
+    // }
 
-        $.ajax({
-          url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
-          data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
-          success: console.log(callresult), error: this.errorHandler
-        });
-      }
+    // lockGetReady = (callresult) => {
+    //     let product = this.props.info;
 
-      updateReady(callresult) {
-        console.log(callresult);
-      }
+    //     if (product) {
+    //         this.data = JSON.parse(callresult.result);
+    //         if (this.data) {
+    //             this.data.push(product);
+    //         }
+    //     }
 
-      errorHandler(statusStr, errorStr) {
-        console.log(statusStr + ' ' + errorStr);
-      }
+    //     $.ajax({
+    //         url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
+    //         data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
+    //         success: this.refreshCart, error: this.errorHandler
+    //     });
+    // }
+
+    // updateReady(callresult) {
+    //     console.log(callresult);
+    // }
+
+    // errorHandler(statusStr, errorStr) {
+    //     console.log(statusStr + ' ' + errorStr);
+    // }
 
     render() {
+        
         return (
             <div className='item'>
                 <img src={this.props.info.url} alt={this.props.info.model} />

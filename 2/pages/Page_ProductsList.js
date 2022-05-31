@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 
 import ProductsList from '../components/ProductsList';
+import Basket from '../components/Basket';
 
 import appData from '../appData';
 
@@ -18,9 +19,12 @@ class Page_ProductsList extends React.PureComponent {
     let productData=appData.products.filter( el => el.category == productId );
     
     return (
+      <div>
       <ProductsList
         item={productData}
       />
+      <Basket />
+      </div>
     );
     
   }

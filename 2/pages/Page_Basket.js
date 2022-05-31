@@ -1,15 +1,18 @@
 import React from 'react';
 
-class Page_Company extends React.PureComponent {
+import BasketTable from '../components/BasketTable';
+
+class Page_Basket extends React.PureComponent {
 
   render() {
 
     return (
-      <h1>hello</h1>
+      <div>
+        <BasketTable />
+        {/* <Form /> */}
+      </div>
     );
-
   }
-
 }
 
-export default Page_Company;
+export default Page_Basket;

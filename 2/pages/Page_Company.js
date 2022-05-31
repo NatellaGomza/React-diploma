@@ -7,11 +7,10 @@ let companyDescription = require('../about.json')
 class Page_Company extends React.PureComponent {
 
   render() {
-console.log(companyDescription);
     return (
       <div>
         <Company header={companyDescription.header}
-        text={companyDescription.text}/>
+          text={companyDescription.text} />
       </div>
     );
 
