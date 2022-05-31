@@ -1,0 +1,28 @@
+.basketItemWrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.basketItemWrapper>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.basketItemWrapper img {
+    width: 20vw;
+}
+
+.itemInBasket {
+    width: 150px;
+    border-width: 0px 1px;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+}
+
+.deleteButton {
+    height: 50px;
+}

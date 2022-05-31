@@ -2,7 +2,6 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 
 import ProductsList from '../components/ProductsList';
-import Basket from '../components/Basket';
 
 import appData from '../appData';
 
@@ -23,12 +22,9 @@ class Page_ProductsList extends React.PureComponent {
       <ProductsList
         item={productData}
       />
-      <Basket />
       </div>
     );
-    
   }
-
 }
     
 export default withRouter(Page_ProductsList);

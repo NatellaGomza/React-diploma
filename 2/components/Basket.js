@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import Item from './Item';
 
+import './Basket.css'
+
 class BasketItems extends React.PureComponent {
 
     static propTypes = {
@@ -18,11 +20,26 @@ class BasketItems extends React.PureComponent {
                 producer={el.producer}
                 model={el.model}
                 url={el.url}
+                price={el.price}
             />
         )
-        console.log({ items });
+
+        let totalPrise = this.props.initState.map(el => el.price);
+        let sum = totalPrise.reduce(function (sum, current) {
+            return sum + current;
+        }, 0);
+
+        console.log(sum);
         return (
-            <div>{items}</div>
+            <div>
+                <h1 className="basketHeader">Товары в корзине</h1>
+                {(!!items.length) ? <div>{items}</div> : <p>Корзина пуста</p>}
+                {(!!items.length) &&
+                    <div className="result">
+                        <div className="resultText">Итого:</div>
+                        <div className="sum">{sum + " y.e"}</div>
+                    </div>}
+            </div>
         )
     }
 }

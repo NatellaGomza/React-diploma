@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import './Product.css';
 
@@ -13,6 +13,7 @@ class AddProduct extends React.PureComponent {
             model: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
             category: PropTypes.string.isRequired,
+            price: PropTypes.number,
         }),
     };
 
@@ -20,10 +21,10 @@ class AddProduct extends React.PureComponent {
         inBasket: false,
     };
 
-    addToCart = () => {      
+    addToCart = () => {
         let newProduct = this.props.info;
-        this.props.dispatch( { type:"addToCart", payload:newProduct } );
-      
+        this.props.dispatch({ type: "addToCart", payload: newProduct });
+
     }
 
     // dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
@@ -73,6 +74,7 @@ class AddProduct extends React.PureComponent {
                 <img src={this.props.info.url} alt={this.props.info.model} />
                 <span className="producer">{this.props.info.producer}</span>
                 <span className="model">{this.props.info.model}</span>
+                <span className="model">{this.props.info.price + " y.e"}</span>
                 {/* <input type="button" className="addingButton" value="Добавить в корзину"></input> */}
                 <button className="addingButton" onClick={this.addToCart}>Добавить в корзину</button>
             </div>
@@ -83,13 +85,13 @@ class AddProduct extends React.PureComponent {
 
 const mapStateToProps = function (state) {
     // этому компоненту ничего не нужно из хранилища Redux
-    return { }; 
-  };
-  
-  // но этому компоненту нужен сам this.props.dispatch, и чтобы
-  // он появился, следует присоединить (connect) компонент к хранилищу Redux
-  const Product = connect(mapStateToProps)(AddProduct);
-  
-  export default Product;
+    return {};
+};
+
+// но этому компоненту нужен сам this.props.dispatch, и чтобы
+// он появился, следует присоединить (connect) компонент к хранилищу Redux
+const Product = connect(mapStateToProps)(AddProduct);
+
+export default Product;
 
 // export default Product;

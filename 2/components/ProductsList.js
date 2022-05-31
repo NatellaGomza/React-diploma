@@ -14,6 +14,7 @@ class ProductsList extends React.PureComponent {
         model: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
+        price: PropTypes.number,
       })
     ),
   };
