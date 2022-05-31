@@ -1,37 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { addToBasket } from './events';
-import { addToBasketTable } from './events';
+import Item from './Item';
 
-class Basket extends React.PureComponent {
+class BasketItems extends React.PureComponent {
 
-    state = {
-        basket: null,
-    }
-
-    componentDidMount = () => {
-        console.log("Basket build")
-        addToBasket.addListener("newProduct", this.addProductToBasket);
+    static propTypes = {
+        initState: PropTypes.array.isRequired,
     };
 
-    // componentWillUnmount = () => {
-    //     console.log("Basket unbuild")
-    //     addToBasket.removeListener("newProduct", this.addProductToBasket);
-    // };
-
-    addProductToBasket = (newProduct) => {
-        let newBasket = newProduct
-        this.setState({basket:newBasket})
-        console.log(newBasket);
-        addToBasketTable.emit("newItem", newBasket);
-    }
-
     render() {
+
+        let items = this.props.initState.map(el =>
+            <Item key={el.id}
+                id={el.id}
+                producer={el.producer}
+                model={el.model}
+                url={el.url}
+            />
+        )
+        console.log({ items });
         return (
-            <div></div>
+            <div>{items}</div>
         )
     }
-
 }
+
+const mapStateToProps = function (state) {
+    return {
+        initState: state.basket,
+    };
+};
+
+const Basket = connect(mapStateToProps)(BasketItems);
 
 export default Basket;

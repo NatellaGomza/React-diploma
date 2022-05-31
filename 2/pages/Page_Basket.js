@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BasketTable from '../components/BasketTable';
+import Basket from '../components/Basket';
 
 class Page_Basket extends React.PureComponent {
 
@@ -8,7 +8,7 @@ class Page_Basket extends React.PureComponent {
 
     return (
       <div>
-        <BasketTable />
+        <Basket />
         {/* <Form /> */}
       </div>
     );

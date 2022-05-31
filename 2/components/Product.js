@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import './Product.css';
-import { addToBasket } from './events';
 
-class Product extends React.PureComponent {
+class AddProduct extends React.PureComponent {
 
     static propTypes = {
         info: PropTypes.shape({
@@ -22,7 +22,8 @@ class Product extends React.PureComponent {
 
     addToCart = () => {      
         let newProduct = this.props.info;
-        addToBasket.emit("newProduct", newProduct);
+        this.props.dispatch( { type:"addToCart", payload:newProduct } );
+      
     }
 
     // dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
@@ -66,7 +67,7 @@ class Product extends React.PureComponent {
     // }
 
     render() {
-        
+
         return (
             <div className='item'>
                 <img src={this.props.info.url} alt={this.props.info.model} />
@@ -80,4 +81,15 @@ class Product extends React.PureComponent {
 
 }
 
-export default Product;
+const mapStateToProps = function (state) {
+    // этому компоненту ничего не нужно из хранилища Redux
+    return { }; 
+  };
+  
+  // но этому компоненту нужен сам this.props.dispatch, и чтобы
+  // он появился, следует присоединить (connect) компонент к хранилищу Redux
+  const Product = connect(mapStateToProps)(AddProduct);
+  
+  export default Product;
+
+// export default Product;

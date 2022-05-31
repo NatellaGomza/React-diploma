@@ -1,12 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './PagesLinks.css';
 
-class PagesLinks extends React.Component {
+class InitPagesLinks extends React.Component {
+
+  static propTypes = {
+    initState: PropTypes.array.isRequired,
+};
 
   render() {
-
+console.log(this.props.initState.length)
     return (
       <div className="header">
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>
@@ -15,8 +21,8 @@ class PagesLinks extends React.Component {
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>Главная</NavLink>
         <NavLink to="/company" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>О компании</NavLink>
         <NavLink to="/basket" className={obj => ("pageLink" + " button" + (obj.isActive ? " activePageLink" : ""))}>
-          <img src = "../cart-arrow-down-solid.svg"></img>
-          <span>Корзина</span></NavLink>
+        {/* //  <img src = "../cart-arrow-down-solid.svg"></img> */}
+          <span>Корзина(<b>{!this.props.initState.length ? 0 : this.props.initState.length}</b>)</span></NavLink>
       </div>
     );
 
@@ -24,4 +30,11 @@ class PagesLinks extends React.Component {
 
 }
 
+const mapStateToProps = function (state) {
+  return {
+      initState: state.basket,
+  };
+};
+
+const PagesLinks = connect(mapStateToProps)(InitPagesLinks);
 export default PagesLinks;
