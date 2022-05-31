@@ -1,44 +1,126 @@
-div.MobileClient
-{
-  padding: 2px 0;
+.photoWrapper {
+    width: calc(20% - 10px);
 }
 
-span.MobileClientBalance
-{
-  float: right;
-  width: 30px;
-  font-weight: bold;
-  text-align: right;
+.photoWrapper h1 {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 41px;
+    color: #504A40;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
 }
 
-span.MobileClientFIO
-{
-  margin-right: 30px;
-}
-.MobileCompany
-{
-  border: double gray 3px;
-  width: 180px;
-  padding: 3px 7px;
-  background-color: lightyellow;
-}
-
-.MobileCompanyName
-{
-  font-weight: bold;
+.photoWrapper a {
+    display: flex;
+    width: 250px;
+    max-width: 100%;
+    padding: 0 5px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none !important;
+    margin: 10px;
 }
 
-.MobileCompanyClients
-{
-  padding-top: 5px;
+.photoWrapper img {
+    width: calc(100% - 10px);
 }
-.PageLink {
+
+.photoWrapper .header-round {
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 20px;
+    color: #504A40;
+}
+
+.photoWrapper .desk-round {
+    font-size: 1.5vw;
+    text-align: center;
+    color: #504A40;
+}.header {
+    display: flex;
+    justify-content: space-between;
+    color: #4B4B4B;
+}
+
+.header .logo {
+    width: 30vw;
+    height: 20vh;
+}
+
+.categoryWrapper h1 {
+    text-align: center;
+    font-size: 3vw;
+}
+.categories {
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}.company > *{
+text-align: center;
+}
+
+.company h1 {
+    padding: 10px 0px;
+}
+
+.company p {
+    font-size: 1.8vw;
+}.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 5px;
+    text-align: center;
+    width: calc(20% - 10px);
+}
+
+.producer {
+    font-weight: bold;
+    font-size: 5vmin;
+    padding: 5px 0;
+    color: #4e4e4e;
+}
+
+.model {
+    padding: 5px 0;
+    color: #959595;
+    line-height: 1.5;
+    font-size: 4vmin;
+}
+
+.addingButton {
+    width:80%;
+    margin: 0 auto;
+    font-size: 4vmin;
+    background-color: aquamarine;
+    border:1px solid rgb(4, 209, 141);
+    border-radius: 10px;
+    min-height: 30px;
+}.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}.pageLink {
     color: black;
     margin-right: 10px;
 }
 
-.ActivePageLink {
+.activePageLink {
     font-weight: bold;
 }
 
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.button img {
+    width:20px;
+    padding-right:10px;
+}
 /*# sourceMappingURL=bundle.css.map*/

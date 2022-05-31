@@ -60,11 +60,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(14);
+} else {
+  module.exports = __webpack_require__(15);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -254,21 +269,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(13);
-} else {
-  module.exports = __webpack_require__(14);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -379,7 +379,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_HistoryRouter", function() { return HistoryRouter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useLinkClickHandler", function() { return useLinkClickHandler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSearchParams", function() { return useSearchParams; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_history__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router__ = __webpack_require__(9);
@@ -783,7 +783,7 @@ function createSearchParams(init) {
 
 //# sourceMappingURL=index.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 4 */
@@ -809,7 +809,7 @@ if (process.env.NODE_ENV !== 'production') {
   module.exports = __webpack_require__(32)();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 5 */
@@ -822,7 +822,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return createMemoryHistory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return createPath; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return parsePath; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(24);
 
 
 /**
@@ -1621,7 +1621,7 @@ function parsePath(path) {
 
 //# sourceMappingURL=index.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -1653,8 +1653,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var data = {
-    companyName: 'Velcom',
-    clientsArr: [{ id: 101, fio: "Иванов И.И.", balance: 200 }, { id: 105, fio: "Сидоров С.С.", balance: 250 }, { id: 110, fio: "Петров П.П.", balance: 180 }, { id: 120, fio: "Григорьев Г.Г.", balance: 220 }]
+    header: 'Детские очки для зрения',
+    categoryInfo: [{ id: 1, url: "opravy-2-3-goda", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_baby_silicone.jpg", header: "ДЕТСКИЕ ОЧКИ ДЛЯ МАЛЫШЕЙ", age: "от 0 до 3-х лет", name: "Детские очки для малышей" }, { id: 2, url: "dlya-devochek", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_girl.jpg", header: "ОЧКИ ДЛЯ ДЕВОЧЕК", age: "от 4-х до 12 лет", name: "Очки для девочек" }, { id: 3, url: "dlya-malchikov", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_boy_22.jpg", header: "ОЧКИ ДЛЯ МАЛЬЧИКОВ", age: "от 4-х до 12 лет", name: "Очки для мальчиков" }, { id: 4, url: "dlya-podrostkov", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_girl_chb.jpg", header: "СТИЛЬНЫЕ ОЧКИ ДЛЯ ПОДРОСТКОВ", age: "от 13-ти до 18 лет", name: "Стильные очки для подростков" }, { id: 5, url: "", src: "https://www.optikakids.by/wp-content/uploads/2021/12/round_boy_sunglasses.jpg", header: "МАЛЬЧИКИ И ДЕВОЧКИ", age: "от 0 до 18 лет", name: "Все модели" }],
+    products: [{ id: 1, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция)", model: "Оправа для девочки AA101с14", url: "https://www.optikakids.by/wp-content/uploads/2021/11/hkaa101c14-44-16-120.jpg" }, { id: 2, category: "opravy-2-3-goda", producer: "Spider-Man", model: "Оправа для мальчика AA038С07", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DS-AA038c07-43-16-125.jpg" }, { id: 3, category: "opravy-2-3-goda", producer: "Cars, Disney (Франция) ", model: "Оправа для мальчика AA011С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DCAA011C01-44-15-125.jpg" }, { id: 4, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция) ", model: "Оправа для девочки HEAA056C14", url: "https://www.optikakids.by/wp-content/uploads/2021/11/heaa056s14-40-16-120.jpg" }, { id: 5, category: "opravy-2-3-goda", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика II003С07", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DC-II003c07-43-15-118.jpg" }, { id: 6, category: "opravy-2-3-goda", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика GR001С06", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DC-II003c07-43-15-118.jpg" }, { id: 7, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция)", model: "Оправа для девочки HKAA122с08", url: "https://www.optikakids.by/wp-content/uploads/2021/11/HK-AA122C08-45-17-120.jpg" }, { id: 8, category: "opravy-2-3-goda", producer: "SWING (Турция)", model: "Детская оправа Tr161 P232", url: "https://www.optikakids.by/wp-content/uploads/2021/10/Tr161-41-14-100-P232.jpg" }, { id: 9, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция)", model: "Оправа для девочки HEAA059C09", url: "https://www.optikakids.by/wp-content/uploads/2021/11/heaa059s09-41-17-120.jpg" }, { id: 10, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция)", model: "Оправа для девочки HEAA051C08", url: "https://www.optikakids.by/wp-content/uploads/2021/11/heaa051s08-44-15-120.jpg" }, { id: 11, category: "opravy-2-3-goda", producer: "Hello Kitty (Франция) ", model: "Оправа для девочки AA104с68", url: "https://www.optikakids.by/wp-content/uploads/2021/11/HKAA104c68-44-15-115.jpg" }, { id: 12, category: "opravy-2-3-goda", producer: "Spider-Man", model: "Оправа для мальчика AA003C16", url: "https://www.optikakids.by/wp-content/uploads/2021/11/dsaa003-c16-43-17-120.jpg" }, { id: 13, category: "opravy-2-3-goda", producer: "Spider-Man", model: "Оправа для мальчика AA028С06", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DS-AA028c06-43-15-120.jpg" }, { id: 14, category: "opravy-2-3-goda", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика AM009С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DCAM009C01-43-17-120.jpg" }, { id: 15, category: "opravy-2-3-goda", producer: "Cars, Disney (Франция) ", model: "Оправа для мальчика AA049С06", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DCAA049C06-42-17-120.jpg" }, { id: 16, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0257 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0257-48-18-142-S5.jpg" }, { id: 17, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0258 С4", url: "	https://www.optikakids.by/wp-content/uploads/2021/12/0258-47-17-142-S4.jpg" }, { id: 18, category: "dlya-devochek", producer: "LuluCastagnette (Франция)", model: "Оправа для девочки MM130C04", url: "	https://www.optikakids.by/wp-content/uploads/2021/10/MM130-c04-49-18-135.jpg" }, { id: 19, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0258 С6", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0258-47-17-142-S6.jpg" }, { id: 20, category: "dlya-devochek", producer: "Hello Kitty (Франция)", model: "Оправа для девочки HKAA122с08", url: "	https://www.optikakids.by/wp-content/uploads/2021/11/HK-AA122C08-45-17-120.jpg" }, { id: 21, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0259 С1", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S1.jpg" }, { id: 22, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0259 С3", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S3.jpg" }, { id: 23, category: "dlya-devochek", producer: "Hello Kitty (Франция)", model: "Оправа для девочки HEAA056C14", url: "	https://www.optikakids.by/wp-content/uploads/2021/11/heaa056s14-40-16-120.jpg" }, { id: 24, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0259 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S5.jpg" }, { id: 25, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0260 С2", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S2.jpg" }, { id: 26, category: "dlya-devochek", producer: "Hello Kitty (Франция)", model: "Оправа для девочки AA101с14", url: "https://www.optikakids.by/wp-content/uploads/2021/11/hkaa101c14-44-16-120.jpg" }, { id: 27, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0260 С4", url: "	https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S4.jpg" }, { id: 28, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0260 С11", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S11.jpg" }, { id: 29, category: "dlya-devochek", producer: "Hello Kitty (Франция)", model: "Оправа для девочки II010с09", url: "	https://www.optikakids.by/wp-content/uploads/2021/11/hkii010c09-47-17-130.jpg" }, { id: 30, category: "dlya-devochek", producer: "GRACE", model: "Оправа для девочки 0257 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0257-48-18-142-S5.jpg" }, { id: 31, category: "dlya-malchikov", producer: "Avengers (Франция)", model: "Оправа для мальчика AA037C01", url: "https://www.optikakids.by/wp-content/uploads/2021/11/DA-AA037-C01-48-15-125.jpg" }, { id: 32, category: "dlya-malchikov", producer: "Spider-Man", model: "Оправа для мальчика AA038С07", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DS-AA038c07-43-16-125.jpg" }, { id: 33, category: "dlya-malchikov", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика AA011С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DCAA011C01-44-15-125.jpg" }, { id: 34, category: "dlya-malchikov", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика II003С07", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DC-II003c07-43-15-118.jpg" }, { id: 35, category: "dlya-malchikov", producer: "Cars, Disney (Франция) ", model: "Оправа для мальчика GR001С06", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DS-GR001c06-43-13-118.jpg" }, { id: 36, category: "dlya-malchikov", producer: "New York Yankees (Франция)", model: "Оправа для мальчика MA016C01", url: "https://www.optikakids.by/wp-content/uploads/2021/11/NYma016c01-49-17-140.jpg" }, { id: 37, category: "dlya-malchikov", producer: "New York Yankees (Франция)", model: "Оправа для мальчика NYII014С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/II014c01-52-18-140.jpg" }, { id: 38, category: "dlya-malchikov", producer: "Avengers (Франция)", model: "Оправа для мальчика AA037C07", url: "https://www.optikakids.by/wp-content/uploads/2021/11/daaa037c07-48-15-125.jpg" }, { id: 39, category: "dlya-malchikov", producer: "New York Yankees (Франция)", model: "Оправа для мальчика AA123C01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/AAA123-c01-49-16-135.jpg" }, { id: 40, category: "dlya-malchikov", producer: "SWING (Турция)", model: "Оправа для мальчика Tr161 P232", url: "https://www.optikakids.by/wp-content/uploads/2021/10/Tr161-41-14-100-P232.jpg" }, { id: 41, category: "dlya-malchikov", producer: "Spider-Man ", model: "Оправа для мальчика AA003C16", url: "https://www.optikakids.by/wp-content/uploads/2021/11/dsaa003-c16-43-17-120.jpg" }, { id: 42, category: "dlya-malchikov", producer: "Spider-Man", model: "Оправа для мальчика AA017C17", url: "https://www.optikakids.by/wp-content/uploads/2021/11/dsaa017c17-46-15-125.jpg" }, { id: 43, category: "dlya-malchikov", producer: "Spider-Man", model: "Оправа для мальчика AA026C67", url: "https://www.optikakids.by/wp-content/uploads/2021/11/DS-AA026-C67-47-15-130.jpg" }, { id: 44, category: "dlya-malchikov", producer: "Spider-Man", model: "Оправа для мальчика AA028С06", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DS-AA028c06-43-15-120.jpg" }, { id: 45, category: "dlya-malchikov", producer: "GRACE", model: "Оправа для девочки 0260 С11", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S11.jpg" }, { id: 46, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0260 С4", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S4.jpg" }, { id: 47, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0260 С2", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0260-48-17-142-S2.jpg" }, { id: 48, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0259 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S5.jpg" }, { id: 49, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0259 С3", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S3.jpg" }, { id: 50, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0259 С1", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0259-48-18-142-S1.jpg" }, { id: 51, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С6", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0258-47-17-142-S6.jpg" }, { id: 52, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0258-47-17-142-S5.jpg" }, { id: 53, category: "dlya-podrostkov", producer: "New York Yankees (Франция)", model: "Оправа для мальчика NYII014С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/II014c01-52-18-140.jpg" }, { id: 54, category: "dlya-podrostkov", producer: "LuluCastagnette (Франция)", model: "Оправа для девочки MM130C04", url: "https://www.optikakids.by/wp-content/uploads/2021/10/MM130-c04-49-18-135.jpg" }, { id: 55, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С4", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0258-47-17-142-S4.jpg" }, { id: 56, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С5", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0257-48-18-142-S5.jpg" }, { id: 57, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С3", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0257-48-18-142-S3.jpg" }, { id: 58, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С21", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0254-47-19-143-S21.jpg" }, { id: 59, category: "dlya-podrostkov", producer: "GRACE", model: "Оправа для девочки 0258 С15", url: "https://www.optikakids.by/wp-content/uploads/2021/12/0254-47-19-143-S15.jpg" }, { id: 60, category: "dlya-podrostkov", producer: "Cars, Disney (Франция)", model: "Оправа для мальчика AM009С01", url: "https://www.optikakids.by/wp-content/uploads/2021/10/DCAM009C01-43-17-120.jpg" }]
 };
 
 exports.default = data;
@@ -1667,12 +1668,12 @@ exports.default = data;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(17);
-} else {
   module.exports = __webpack_require__(18);
+} else {
+  module.exports = __webpack_require__(19);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 9 */
@@ -1709,7 +1710,7 @@ if (process.env.NODE_ENV === 'production') {
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0_history__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_0_history__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_0_history__["f"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /**
  * React Router v6.3.0
@@ -2653,7 +2654,7 @@ function renderMatches(matches) {
 
 //# sourceMappingURL=index.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 10 */
@@ -2668,7 +2669,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(29);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 11 */
@@ -2684,21 +2685,95 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 "use strict";
 
 
-var _react = __webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(15);
+var _propTypes = __webpack_require__(4);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Product = __webpack_require__(42);
+
+var _Product2 = _interopRequireDefault(_Product);
+
+__webpack_require__(44);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductsList = function (_React$PureComponent) {
+  _inherits(ProductsList, _React$PureComponent);
+
+  function ProductsList() {
+    _classCallCheck(this, ProductsList);
+
+    return _possibleConstructorReturn(this, (ProductsList.__proto__ || Object.getPrototypeOf(ProductsList)).apply(this, arguments));
+  }
+
+  _createClass(ProductsList, [{
+    key: 'render',
+    value: function render() {
+
+      var item = this.props.item.map(function (el) {
+        return _react2.default.createElement(_Product2.default, { key: el.id, info: el });
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'wrapper' },
+        item
+      );
+    }
+  }]);
+
+  return ProductsList;
+}(_react2.default.PureComponent);
+
+ProductsList.propTypes = {
+  item: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    id: _propTypes2.default.number.isRequired,
+    producer: _propTypes2.default.string.isRequired,
+    model: _propTypes2.default.string.isRequired,
+    url: _propTypes2.default.string.isRequired,
+    category: _propTypes2.default.string.isRequired
+  }))
+};
+exports.default = ProductsList;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRouterDom = __webpack_require__(3);
 
-var _PagesRouter = __webpack_require__(24);
+var _PagesRouter = __webpack_require__(25);
 
 var _PagesRouter2 = _interopRequireDefault(_PagesRouter);
 
-var _PagesLinks = __webpack_require__(40);
+var _PagesLinks = __webpack_require__(46);
 
 var _PagesLinks2 = _interopRequireDefault(_PagesLinks);
 
@@ -2716,7 +2791,7 @@ _reactDom2.default.render(_react2.default.createElement(
 ), document.getElementById('container'));
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2746,7 +2821,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5084,10 +5159,10 @@ exports.version = ReactVersion;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5125,15 +5200,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(17);
 } else {
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(20);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5148,7 +5223,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),m=__webpack_require__(2),r=__webpack_require__(8);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
+var aa=__webpack_require__(0),m=__webpack_require__(2),r=__webpack_require__(8);function y(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(y(227));var ba=new Set,ca={};function da(a,b){ea(a,b);ea(a+"Capture",b)}
 function ea(a,b){ca[a]=b;for(a=0;a<b.length;a++)ba.add(b[a])}
 var fa=!("undefined"===typeof window||"undefined"===typeof window.document||"undefined"===typeof window.document.createElement),ha=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ia=Object.prototype.hasOwnProperty,
 ja={},ka={};function la(a){if(ia.call(ka,a))return!0;if(ia.call(ja,a))return!1;if(ha.test(a))return ka[a]=!0;ja[a]=!0;return!1}function ma(a,b,c,d){if(null!==c&&0===c.type)return!1;switch(typeof b){case "function":case "symbol":return!0;case "boolean":if(d)return!1;if(null!==c)return!c.acceptsBooleans;a=a.toLowerCase().slice(0,5);return"data-"!==a&&"aria-"!==a;default:return!1}}
@@ -5437,7 +5512,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5464,7 +5539,7 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6115,10 +6190,10 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6137,10 +6212,10 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
+var React = __webpack_require__(0);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(8);
-var tracing = __webpack_require__(20);
+var tracing = __webpack_require__(21);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -32385,25 +32460,25 @@ exports.version = ReactVersion;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(21);
-} else {
   module.exports = __webpack_require__(22);
+} else {
+  module.exports = __webpack_require__(23);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32419,7 +32494,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32771,10 +32846,10 @@ exports.unstable_wrap = unstable_wrap;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32798,7 +32873,7 @@ function _extends() {
 }
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32810,27 +32885,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(3);
 
-var _Page_About = __webpack_require__(25);
+var _Page_About = __webpack_require__(26);
 
 var _Page_About2 = _interopRequireDefault(_Page_About);
 
-var _Page_Company = __webpack_require__(26);
+var _Page_Company = __webpack_require__(36);
 
 var _Page_Company2 = _interopRequireDefault(_Page_Company);
 
-var _Page_Clients = __webpack_require__(33);
+var _Page_Basket = __webpack_require__(40);
 
-var _Page_Clients2 = _interopRequireDefault(_Page_Clients);
+var _Page_Basket2 = _interopRequireDefault(_Page_Basket);
 
-var _Page_Client = __webpack_require__(38);
+var _Page_ProductsList = __webpack_require__(41);
 
-var _Page_Client2 = _interopRequireDefault(_Page_Client);
+var _Page_ProductsList2 = _interopRequireDefault(_Page_ProductsList);
+
+var _Page_AllProducts = __webpack_require__(45);
+
+var _Page_AllProducts2 = _interopRequireDefault(_Page_AllProducts);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32858,8 +32937,9 @@ var PagesRouter = function (_React$Component) {
         null,
         _react2.default.createElement(_reactRouterDom.Route, { path: '/', element: _react2.default.createElement(_Page_About2.default, null) }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/company', element: _react2.default.createElement(_Page_Company2.default, null) }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/clients', element: _react2.default.createElement(_Page_Clients2.default, null) }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/client/:clid', element: _react2.default.createElement(_Page_Client2.default, null) })
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/basket', element: _react2.default.createElement(_Page_Basket2.default, null) }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/products/', element: _react2.default.createElement(_Page_AllProducts2.default, null) }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/products/:item', element: _react2.default.createElement(_Page_ProductsList2.default, null) })
       );
     }
   }]);
@@ -32870,7 +32950,7 @@ var PagesRouter = function (_React$Component) {
 exports.default = PagesRouter;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32882,9 +32962,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _CategoryWrapper = __webpack_require__(27);
+
+var _CategoryWrapper2 = _interopRequireDefault(_CategoryWrapper);
+
+var _appData = __webpack_require__(7);
+
+var _appData2 = _interopRequireDefault(_appData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32906,17 +32994,10 @@ var Page_About = function (_React$PureComponent) {
   _createClass(Page_About, [{
     key: 'render',
     value: function render() {
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h1',
-          null,
-          '\u0441\u0430\u0439\u0442 \u043E \u043C\u043E\u0431\u0438\u043B\u044C\u043D\u043E\u0439 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438'
-        ),
-        '\u0434\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C!'
-      );
+      return _react2.default.createElement(_CategoryWrapper2.default, {
+        header: _appData2.default.header,
+        categories: _appData2.default.categoryInfo
+      });
     }
   }]);
 
@@ -32924,64 +33005,6 @@ var Page_About = function (_React$PureComponent) {
 }(_react2.default.PureComponent);
 
 exports.default = Page_About;
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _MobileCompany = __webpack_require__(27);
-
-var _MobileCompany2 = _interopRequireDefault(_MobileCompany);
-
-var _appData = __webpack_require__(7);
-
-var _appData2 = _interopRequireDefault(_appData);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Page_Company = function (_React$PureComponent) {
-  _inherits(Page_Company, _React$PureComponent);
-
-  function Page_Company() {
-    _classCallCheck(this, Page_Company);
-
-    return _possibleConstructorReturn(this, (Page_Company.__proto__ || Object.getPrototypeOf(Page_Company)).apply(this, arguments));
-  }
-
-  _createClass(Page_Company, [{
-    key: 'render',
-    value: function render() {
-
-      return _react2.default.createElement(_MobileCompany2.default, {
-        name: _appData2.default.companyName,
-        clients: _appData2.default.clientsArr
-      });
-    }
-  }]);
-
-  return Page_Company;
-}(_react2.default.PureComponent);
-
-exports.default = Page_Company;
 
 /***/ }),
 /* 27 */
@@ -32996,13 +33019,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Category = __webpack_require__(33);
+
+var _Category2 = _interopRequireDefault(_Category);
+
+__webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33012,36 +33041,54 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var MobileCompany = function (_React$PureComponent) {
-  _inherits(MobileCompany, _React$PureComponent);
+var CategoryWrapper = function (_React$PureComponent) {
+  _inherits(CategoryWrapper, _React$PureComponent);
 
-  function MobileCompany() {
-    _classCallCheck(this, MobileCompany);
+  function CategoryWrapper() {
+    _classCallCheck(this, CategoryWrapper);
 
-    return _possibleConstructorReturn(this, (MobileCompany.__proto__ || Object.getPrototypeOf(MobileCompany)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CategoryWrapper.__proto__ || Object.getPrototypeOf(CategoryWrapper)).apply(this, arguments));
   }
 
-  _createClass(MobileCompany, [{
+  _createClass(CategoryWrapper, [{
     key: 'render',
     value: function render() {
 
+      var category = this.props.categories.map(function (el) {
+        return _react2.default.createElement(_Category2.default, { key: el.id, info: el });
+      });
+
       return _react2.default.createElement(
-        'h1',
-        null,
-        '\u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \xAB',
-        this.props.name,
-        '\xBB'
+        'div',
+        { className: 'categoryWrapper' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          this.props.header
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'categories' },
+          category
+        )
       );
     }
   }]);
 
-  return MobileCompany;
+  return CategoryWrapper;
 }(_react2.default.PureComponent);
 
-MobileCompany.propTypes = {
-  name: _propTypes2.default.string.isRequired
+CategoryWrapper.propTypes = {
+  header: _propTypes2.default.string.isRequired,
+  categories: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    id: _propTypes2.default.number.isRequired,
+    url: _propTypes2.default.string.isRequired,
+    src: _propTypes2.default.string.isRequired,
+    header: _propTypes2.default.string.isRequired,
+    age: _propTypes2.default.string.isRequired
+  }))
 };
-exports.default = MobileCompany;
+exports.default = CategoryWrapper;
 
 /***/ }),
 /* 28 */
@@ -33252,7 +33299,7 @@ exports.typeOf = typeOf;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 30 */
@@ -33870,7 +33917,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 31 */
@@ -33981,7 +34028,7 @@ checkPropTypes.resetWarningCache = function() {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 32 */
@@ -34068,17 +34115,242 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _MobileClients = __webpack_require__(34);
+var _propTypes = __webpack_require__(4);
 
-var _MobileClients2 = _interopRequireDefault(_MobileClients);
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _appData = __webpack_require__(7);
+var _reactRouterDom = __webpack_require__(3);
 
-var _appData2 = _interopRequireDefault(_appData);
+__webpack_require__(34);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Category = function (_React$PureComponent) {
+  _inherits(Category, _React$PureComponent);
+
+  function Category() {
+    _classCallCheck(this, Category);
+
+    return _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).apply(this, arguments));
+  }
+
+  _createClass(Category, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'photoWrapper' },
+        _react2.default.createElement(
+          _reactRouterDom.NavLink,
+          { to: "/products/" + this.props.info.url },
+          _react2.default.createElement('img', { src: this.props.info.src, alt: this.props.info.name }),
+          _react2.default.createElement(
+            'span',
+            { className: 'header-round' },
+            this.props.info.header
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'desk-round' },
+            this.props.info.age
+          )
+        )
+      );
+    }
+  }]);
+
+  return Category;
+}(_react2.default.PureComponent);
+
+Category.propTypes = {
+  info: _propTypes2.default.shape({
+    id: _propTypes2.default.number.isRequired,
+    url: _propTypes2.default.string.isRequired,
+    src: _propTypes2.default.string.isRequired,
+    header: _propTypes2.default.string.isRequired,
+    age: _propTypes2.default.string.isRequired
+  })
+};
+exports.default = Category;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Company = __webpack_require__(37);
+
+var _Company2 = _interopRequireDefault(_Company);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var companyDescription = __webpack_require__(39);
+
+var Page_Company = function (_React$PureComponent) {
+  _inherits(Page_Company, _React$PureComponent);
+
+  function Page_Company() {
+    _classCallCheck(this, Page_Company);
+
+    return _possibleConstructorReturn(this, (Page_Company.__proto__ || Object.getPrototypeOf(Page_Company)).apply(this, arguments));
+  }
+
+  _createClass(Page_Company, [{
+    key: 'render',
+    value: function render() {
+      console.log(companyDescription);
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Company2.default, { header: companyDescription.header,
+          text: companyDescription.text })
+      );
+    }
+  }]);
+
+  return Page_Company;
+}(_react2.default.PureComponent);
+
+exports.default = Page_Company;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(4);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(38);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Company = function (_React$PureComponent) {
+  _inherits(Company, _React$PureComponent);
+
+  function Company() {
+    _classCallCheck(this, Company);
+
+    return _possibleConstructorReturn(this, (Company.__proto__ || Object.getPrototypeOf(Company)).apply(this, arguments));
+  }
+
+  _createClass(Company, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'company' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          this.props.header
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          this.props.text
+        )
+      );
+    }
+  }]);
+
+  return Company;
+}(_react2.default.PureComponent);
+
+Company.propTypes = {
+  header: _propTypes2.default.string.isRequired,
+  text: _propTypes2.default.string.isRequired
+};
+exports.default = Company;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = {"header":"Сеть салонов БелОптика Кидс – это профессиональная детская оптика, где дети – самая важная ценность!","text":"Специалисты детской оптики с любовью, заботой и вниманием помогают каждому ребенку, которому необходима коррекция зрения, предлагая медицинские оправы и солнцезащитные очки известных европейских брендов, которые заслужили доверие родителей по всему миру: NanoVista, FisherPrice, HelloKitty, SWING, BEN.X, Catimini, Jacadi, LuLuCastagnette, Lapo, а также коллекции оправ с легендарными героями Disney и многие другие. Модные очки в ярких и стильных оправах вызывают у детей интерес и превращают процесс их ношения в увлекательную игру. Хорошее зрение ребенка – это не только модная оправа, но и профессионально выполненная проверка зрения и качественные линзы. Наши офтальмологические кабинеты оснащены новейшим диагностическим оборудованием и позволяют проверить зрение даже самым маленьким пациентам. Мы работаем только с лидерами в производстве очковой оптики и предлагаем большой выбор очковых линз производства Rodenstock (Германия) и HOYA (Япония), в том числе и астигматических."}
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34101,10 +34373,11 @@ var Page_Company = function (_React$PureComponent) {
     key: 'render',
     value: function render() {
 
-      return _react2.default.createElement(_MobileClients2.default, {
-        name: _appData2.default.companyName,
-        clients: _appData2.default.clientsArr
-      });
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'hello'
+      );
     }
   }]);
 
@@ -34114,7 +34387,7 @@ var Page_Company = function (_React$PureComponent) {
 exports.default = Page_Company;
 
 /***/ }),
-/* 34 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34122,192 +34395,21 @@ exports.default = Page_Company;
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(4);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _MobileClient = __webpack_require__(35);
-
-var _MobileClient2 = _interopRequireDefault(_MobileClient);
-
-__webpack_require__(37);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MobileClients = function (_React$PureComponent) {
-  _inherits(MobileClients, _React$PureComponent);
-
-  function MobileClients() {
-    _classCallCheck(this, MobileClients);
-
-    return _possibleConstructorReturn(this, (MobileClients.__proto__ || Object.getPrototypeOf(MobileClients)).apply(this, arguments));
-  }
-
-  _createClass(MobileClients, [{
-    key: 'render',
-    value: function render() {
-
-      var clientsCode = this.props.clients.map(function (client) {
-        return _react2.default.createElement(_MobileClient2.default, { key: client.id, info: client });
-      });
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'MobileCompany' },
-        _react2.default.createElement(
-          'div',
-          { className: 'MobileCompanyName' },
-          '\u041A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \xAB',
-          this.props.name,
-          '\xBB'
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'MobileCompanyClients' },
-          clientsCode
-        )
-      );
-    }
-  }]);
-
-  return MobileClients;
-}(_react2.default.PureComponent);
-
-MobileClients.propTypes = {
-  name: _propTypes2.default.string.isRequired,
-  clients: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-    id: _propTypes2.default.number.isRequired,
-    fio: _propTypes2.default.string.isRequired,
-    balance: _propTypes2.default.number.isRequired
-  }))
-};
-exports.default = MobileClients;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(4);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(3);
-
-__webpack_require__(36);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MobileClient = function (_React$PureComponent) {
-  _inherits(MobileClient, _React$PureComponent);
-
-  function MobileClient() {
-    _classCallCheck(this, MobileClient);
-
-    return _possibleConstructorReturn(this, (MobileClient.__proto__ || Object.getPrototypeOf(MobileClient)).apply(this, arguments));
-  }
-
-  _createClass(MobileClient, [{
-    key: 'render',
-    value: function render() {
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'MobileClient' },
-        _react2.default.createElement(
-          'span',
-          { className: 'MobileClientBalance' },
-          this.props.info.balance
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.NavLink,
-          { to: "/client/" + this.props.info.id, className: 'MobileClientFIO' },
-          this.props.info.fio
-        )
-      );
-    }
-  }]);
-
-  return MobileClient;
-}(_react2.default.PureComponent);
-
-MobileClient.propTypes = {
-  info: _propTypes2.default.shape({
-    id: _propTypes2.default.number.isRequired,
-    fio: _propTypes2.default.string.isRequired,
-    balance: _propTypes2.default.number.isRequired
-  })
-};
-exports.default = MobileClient;
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(3);
 
-var _MobileClientInfo = __webpack_require__(39);
+var _ProductsList = __webpack_require__(12);
 
-var _MobileClientInfo2 = _interopRequireDefault(_MobileClientInfo);
+var _ProductsList2 = _interopRequireDefault(_ProductsList);
 
 var _appData = __webpack_require__(7);
 
@@ -34321,70 +34423,64 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// react-router v6 предоставляет возможности доступа к параметрам из УРЛа только в виде хуков, т.е. для функциональных компонентов
-// эта HOF делает возможным использование этого react-router и с классовыми компонентами
 var withRouter = function withRouter(Component) {
-    return function (props) {
-        var params = (0, _reactRouterDom.useParams)();
-        return _react2.default.createElement(Component, _extends({}, props, { params: params }));
-    };
+  return function (props) {
+    var params = (0, _reactRouterDom.useParams)();
+    return _react2.default.createElement(Component, _extends({}, props, { params: params }));
+  };
 };
 
-var Page_Client = function (_React$PureComponent) {
-    _inherits(Page_Client, _React$PureComponent);
+var Page_ProductsList = function (_React$PureComponent) {
+  _inherits(Page_ProductsList, _React$PureComponent);
 
-    function Page_Client() {
-        _classCallCheck(this, Page_Client);
+  function Page_ProductsList() {
+    _classCallCheck(this, Page_ProductsList);
 
-        return _possibleConstructorReturn(this, (Page_Client.__proto__ || Object.getPrototypeOf(Page_Client)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Page_ProductsList.__proto__ || Object.getPrototypeOf(Page_ProductsList)).apply(this, arguments));
+  }
+
+  _createClass(Page_ProductsList, [{
+    key: 'render',
+    value: function render() {
+
+      var productId = this.props.params.item;
+      var productData = _appData2.default.products.filter(function (el) {
+        return el.category == productId;
+      });
+
+      return _react2.default.createElement(_ProductsList2.default, {
+        item: productData
+      });
     }
+  }]);
 
-    _createClass(Page_Client, [{
-        key: 'render',
-        value: function render() {
-
-            //console.log(this.props);
-
-            // раз написано <Route path="/client/:clid" element={<Page_Client/>} />
-            // значит withRouter(Page_Client) получит то что в УРЛе после /client/ под именем props.params.clid в виде строки
-
-            var clientId = parseInt(this.props.params.clid);
-
-            var clientData = _appData2.default.clientsArr.find(function (c) {
-                return c.id == clientId;
-            });
-
-            return _react2.default.createElement(_MobileClientInfo2.default, {
-                info: clientData
-            });
-        }
-    }]);
-
-    return Page_Client;
+  return Page_ProductsList;
 }(_react2.default.PureComponent);
 
-exports.default = withRouter(Page_Client);
+exports.default = withRouter(Page_ProductsList);
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(43);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34394,43 +34490,126 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var MobileClientInfo = function (_React$PureComponent) {
-  _inherits(MobileClientInfo, _React$PureComponent);
+var Product = function (_React$PureComponent) {
+    _inherits(Product, _React$PureComponent);
 
-  function MobileClientInfo() {
-    _classCallCheck(this, MobileClientInfo);
+    function Product() {
+        _classCallCheck(this, Product);
 
-    return _possibleConstructorReturn(this, (MobileClientInfo.__proto__ || Object.getPrototypeOf(MobileClientInfo)).apply(this, arguments));
-  }
-
-  _createClass(MobileClientInfo, [{
-    key: 'render',
-    value: function render() {
-
-      return _react2.default.createElement(
-        'h1',
-        null,
-        '\u043A\u043B\u0438\u0435\u043D\u0442 \xAB',
-        this.props.info.fio,
-        '\xBB, \u0431\u0430\u043B\u0430\u043D\u0441 ',
-        this.props.info.balance
-      );
+        return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
     }
-  }]);
 
-  return MobileClientInfo;
+    _createClass(Product, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'item' },
+                _react2.default.createElement('img', { src: this.props.info.url, alt: this.props.info.model }),
+                _react2.default.createElement(
+                    'span',
+                    { className: 'producer' },
+                    this.props.info.producer
+                ),
+                _react2.default.createElement(
+                    'span',
+                    { className: 'model' },
+                    this.props.info.model
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { className: 'addingButton' },
+                    '\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443'
+                )
+            );
+        }
+    }]);
+
+    return Product;
 }(_react2.default.PureComponent);
 
-MobileClientInfo.propTypes = {
-  info: _propTypes2.default.shape({
-    fio: _propTypes2.default.string.isRequired,
-    balance: _propTypes2.default.number.isRequired
-  })
+Product.propTypes = {
+    info: _propTypes2.default.shape({
+        id: _propTypes2.default.number.isRequired,
+        producer: _propTypes2.default.string.isRequired,
+        model: _propTypes2.default.string.isRequired,
+        url: _propTypes2.default.string.isRequired,
+        category: _propTypes2.default.string.isRequired
+    })
 };
-exports.default = MobileClientInfo;
+exports.default = Product;
 
 /***/ }),
-/* 40 */
+/* 43 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ProductsList = __webpack_require__(12);
+
+var _ProductsList2 = _interopRequireDefault(_ProductsList);
+
+var _appData = __webpack_require__(7);
+
+var _appData2 = _interopRequireDefault(_appData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page_AllProducts = function (_React$PureComponent) {
+    _inherits(Page_AllProducts, _React$PureComponent);
+
+    function Page_AllProducts() {
+        _classCallCheck(this, Page_AllProducts);
+
+        return _possibleConstructorReturn(this, (Page_AllProducts.__proto__ || Object.getPrototypeOf(Page_AllProducts)).apply(this, arguments));
+    }
+
+    _createClass(Page_AllProducts, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(_ProductsList2.default, {
+                item: _appData2.default.products
+            });
+        }
+    }]);
+
+    return Page_AllProducts;
+}(_react2.default.PureComponent);
+
+exports.default = Page_AllProducts;
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34442,13 +34621,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(3);
 
-__webpack_require__(41);
+__webpack_require__(47);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34473,27 +34652,39 @@ var PagesLinks = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'header' },
         _react2.default.createElement(
           _reactRouterDom.NavLink,
           { to: '/', className: function className(obj) {
-              return "PageLink" + (obj.isActive ? " ActivePageLink" : "");
+              return "pageLink" + (obj.isActive ? " activePageLink" : "");
+            } },
+          _react2.default.createElement('img', { className: 'logo', src: 'https://www.optikakids.by/wp-content/themes/optikakids/img/logo1.png', alt: 'Company Logo' })
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.NavLink,
+          { to: '/', className: function className(obj) {
+              return "pageLink" + (obj.isActive ? " activePageLink" : "");
             } },
           '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
         ),
         _react2.default.createElement(
           _reactRouterDom.NavLink,
           { to: '/company', className: function className(obj) {
-              return "PageLink" + (obj.isActive ? " ActivePageLink" : "");
+              return "pageLink" + (obj.isActive ? " activePageLink" : "");
             } },
           '\u041E \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438'
         ),
         _react2.default.createElement(
           _reactRouterDom.NavLink,
-          { to: '/clients', className: function className(obj) {
-              return "PageLink" + (obj.isActive ? " ActivePageLink" : "");
+          { to: '/basket', className: function className(obj) {
+              return "pageLink" + " button" + (obj.isActive ? " activePageLink" : "");
             } },
-          '\u041A\u043B\u0438\u0435\u043D\u0442\u044B'
+          _react2.default.createElement('img', { src: '../cart-arrow-down-solid.svg' }),
+          _react2.default.createElement(
+            'span',
+            null,
+            '\u041A\u043E\u0440\u0437\u0438\u043D\u0430'
+          )
         )
       );
     }
@@ -34505,7 +34696,7 @@ var PagesLinks = function (_React$Component) {
 exports.default = PagesLinks;
 
 /***/ }),
-/* 41 */
+/* 47 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
