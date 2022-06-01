@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { addToBasket } from './events';
 
 import './Product.css';
 
@@ -18,9 +19,13 @@ class AddProduct extends React.PureComponent {
         isItemInBasket: PropTypes.bool.isRequired,
     };
 
-    addToCart = () => {
+        state = {
+        inBasket: false,
+    };
+
+    addToCart = () => {      
         let newProduct = this.props.info;
-        this.props.dispatch({ type: "addToCart", payload: newProduct });
+        addToBasket.emit("newProduct", newProduct);
     }
 
     render() {

@@ -7,26 +7,28 @@ import basketReducer from "../components/basketReducer";
 
 import PagesRouter from './PagesRouter';
 import PagesLinks from './PagesLinks';
+import Basket from '../components/Basket';
 
-let combinedReducer=combineReducers({
+let combinedReducer = combineReducers({
   // редьюсер counterReducer отвечает за раздел state под именем counter
-  basket: basketReducer, 
+  basket: basketReducer,
   // + другие редьюсеры
 });
-let store=createStore(combinedReducer);
+let store = createStore(combinedReducer);
 
 class MainRouter extends React.Component {
 
-    render() {
-  
-      return (
-        <Provider store={store}>
-         <PagesLinks />
-         <PagesRouter/>
-        </Provider>
-      );
-    }
-  
+  render() {
+
+    return (
+      <Provider store={store}>
+        <Basket />
+        <PagesLinks />
+        <PagesRouter />
+      </Provider>
+    );
   }
-  
-  export default MainRouter;
+
+}
+
+export default MainRouter;

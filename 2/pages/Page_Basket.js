@@ -1,13 +1,14 @@
 import React from 'react';
+import BasketItems from '../components/BasketItems';
 
-import Basket from '../components/Basket';
+import Item from '../components/Item';
 
 class Page_Basket extends React.PureComponent {
 
   render() {
 
     return (
-        <Basket />
+        <BasketItems />
     );
   }
 }

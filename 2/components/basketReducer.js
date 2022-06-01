@@ -78,9 +78,8 @@ function basketReducer(state = initState, action) {
   switch (action.type) {
 
     case "addToCart": {
-
       let newState = { ...state }
-      newState.basket.push(item);
+      newState.basket = item;
 
       return newState;
     }

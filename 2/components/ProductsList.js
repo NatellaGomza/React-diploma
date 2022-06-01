@@ -32,7 +32,7 @@ class InitProductList extends React.PureComponent {
           isItemInBasket = true;
         }
       }
-      
+
       return <Product key={el.id} info={el} isItemInBasket={isItemInBasket} />
     });
 

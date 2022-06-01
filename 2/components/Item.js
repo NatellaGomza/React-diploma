@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { deleteFromBasket } from './events';
 import { CSSTransition } from 'react-transition-group';
 
 import './Item.css';
@@ -15,60 +16,14 @@ class InitItem extends React.Component {
     price: PropTypes.number.isRequired,
   };
 
-  dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
-  dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
-  updatePassword = null;
-  data = [];
-
   state = {
     deleteItem: false,
   }
 
-  componentDidMount() {
-    this.updateBasket();
-  }
-
-  updateBasket() {
-    this.updatePassword = Math.random();
-    $.ajax({
-      url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-      data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
-      success: this.lockGetReady, error: this.errorHandler
-    }
-    );
-  }
-
-  lockGetReady = (callresult) => {
-    let product = this.props;
-    console.log(callresult.result)
-    if (product && callresult.result) {
-      this.data = JSON.parse(callresult.result);
-      if (this.data) {
-        console.log('gfgg')
-        this.data.push(product);
-      }
-    }
-    console.log(this.data);
-    $.ajax({
-      url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
-      data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
-      success: console.log('success'), error: this.errorHandler
-    });
-  }
-
-  updateReady(callresult) {
-    console.log(callresult);
-  }
-
-  errorHandler(statusStr, errorStr) {
-    console.log(statusStr + ' ' + errorStr);
-  }
-
-  deleteFromCart = () => {
-    let deletedProduct = this.props;
-    this.setState({ deleteItem: true });
-    this.props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
-  }
+  deleteFromCart = () => {      
+    let deletedProduct = this.props.id;
+    deleteFromBasket.emit("deleteProduct", deletedProduct);
+}
 
   render() {
 
