@@ -4,29 +4,30 @@
     justify-content: space-between;
     margin: 15px 5px;
     text-align: center;
-    width: calc(20% - 10px);
+    width: 170px;
 }
 
 .producer {
     font-weight: bold;
-    font-size: 5vmin;
+    font-size: 3vmin;
     padding: 5px 0;
     color: #4e4e4e;
+    height:50px;
 }
 
 .model {
     padding: 5px 0;
     color: #959595;
     line-height: 1.5;
-    font-size: 4vmin;
+    font-size: 2.5vmin;
 }
 
 .addingButton {
     width:80%;
     margin: 0 auto;
-    font-size: 4vmin;
+    font-size: 2vmin;
     background-color: aquamarine;
     border:1px solid rgb(4, 209, 141);
     border-radius: 10px;
-    min-height: 30px;
+    min-height: 50px;
 }

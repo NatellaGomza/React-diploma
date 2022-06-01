@@ -7,10 +7,7 @@ class Page_Basket extends React.PureComponent {
   render() {
 
     return (
-      <div>
         <Basket />
-        {/* <Form /> */}
-      </div>
     );
   }
 }

@@ -11,6 +11,15 @@ class BasketItems extends React.PureComponent {
         initState: PropTypes.object.isRequired,
     };
 
+    addToCart = () => {
+        this.updatePassword = Math.random();
+        $.ajax({
+            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
+            data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
+            success: this.lockGetReady, error: this.errorHandler
+        });
+    }
+
     render() {
 
         let items = this.props.initState.basket.map(el =>

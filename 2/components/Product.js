@@ -23,53 +23,8 @@ class AddProduct extends React.PureComponent {
         this.props.dispatch({ type: "addToCart", payload: newProduct });
     }
 
-    // dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
-    // dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
-    // updatePassword = null;
-    // data = [];
-    // itemsForBasket = [];
-
-    // addToCart = () => {
-    //     this.updatePassword = Math.random();
-    //     $.ajax({
-    //         url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-    //         data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
-    //         success: this.lockGetReady, error: this.errorHandler
-    //     });
-    // }
-
-    // lockGetReady = (callresult) => {
-    //     let product = this.props.info;
-
-    //     if (product) {
-    //         this.data = JSON.parse(callresult.result);
-    //         if (this.data) {
-    //             this.data.push(product);
-    //         }
-    //     }
-
-    //     $.ajax({
-    //         url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
-    //         data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
-    //         success: this.refreshCart, error: this.errorHandler
-    //     });
-    // }
-
-    // updateReady(callresult) {
-    //     console.log(callresult);
-    // }
-
-    // errorHandler(statusStr, errorStr) {
-    //     console.log(statusStr + ' ' + errorStr);
-    // }
-
     render() {
-console.log('ffgd')
-    //    this.props.id.forEach(el => {
-    //        if(el === this.props.info.id) {
-    //            return this.setState({inBasket:true})
-    //        }
-    //    })
+        console.log('ffgd');
 
         return (
             <div className='item'>

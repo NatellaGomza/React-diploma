@@ -11,13 +11,11 @@ class InitPageAllProducts extends React.PureComponent {
   };
 
   render() {
-    
+
     return (
-      <div>
-        <ProductsList
-          item={this.props.initState.products}
-        />
-      </div>
+      <ProductsList
+        item={this.props.initState.products}
+      />
     );
 
   }

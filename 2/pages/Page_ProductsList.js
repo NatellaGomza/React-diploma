@@ -21,11 +21,9 @@ class InitPageProductsList extends React.PureComponent {
     let productData = this.props.initState.products.filter(el => el.category == productId);
 
     return (
-      <div>
         <ProductsList
           item={productData}
         />
-      </div>
     );
   }
 }

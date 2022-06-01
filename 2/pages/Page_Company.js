@@ -8,10 +8,8 @@ class Page_Company extends React.PureComponent {
 
   render() {
     return (
-      <div>
         <Company header={companyDescription.header}
           text={companyDescription.text} />
-      </div>
     );
 
   }
