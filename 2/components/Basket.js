@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Item from './Item';
-
 import './Basket.css'
 
 class BasketItems extends React.PureComponent {

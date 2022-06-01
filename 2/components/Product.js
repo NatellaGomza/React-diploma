@@ -15,6 +15,7 @@ class AddProduct extends React.PureComponent {
             category: PropTypes.string.isRequired,
             price: PropTypes.number,
         }),
+        initState: PropTypes.array.isRequired,
     };
 
     state = {
@@ -24,7 +25,6 @@ class AddProduct extends React.PureComponent {
     addToCart = () => {
         let newProduct = this.props.info;
         this.props.dispatch({ type: "addToCart", payload: newProduct });
-
     }
 
     // dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
@@ -69,14 +69,19 @@ class AddProduct extends React.PureComponent {
 
     render() {
 
+        this.props.initState.forEach(el => {
+            if (el.id === this.props.info.id) {
+                this.setState( {inBasket: true} );
+            }
+        })
+
         return (
             <div className='item'>
                 <img src={this.props.info.url} alt={this.props.info.model} />
                 <span className="producer">{this.props.info.producer}</span>
                 <span className="model">{this.props.info.model}</span>
                 <span className="model">{this.props.info.price + " y.e"}</span>
-                {/* <input type="button" className="addingButton" value="Добавить в корзину"></input> */}
-                <button className="addingButton" onClick={this.addToCart}>Добавить в корзину</button>
+                {(!this.state.inBasket) ? <button className="addingButton" onClick={this.addToCart}>Добавить в корзину</button> : <button className="addingButton" disabled>Уже в корзине</button>}
             </div>
         );
     }
@@ -84,14 +89,11 @@ class AddProduct extends React.PureComponent {
 }
 
 const mapStateToProps = function (state) {
-    // этому компоненту ничего не нужно из хранилища Redux
-    return {};
+    return {
+        initState: state.basket,
+    };
 };
 
-// но этому компоненту нужен сам this.props.dispatch, и чтобы
-// он появился, следует присоединить (connect) компонент к хранилищу Redux
 const Product = connect(mapStateToProps)(AddProduct);
 
 export default Product;
-
-// export default Product;

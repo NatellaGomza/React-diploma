@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './Item.css';
 
-class Item extends React.Component {
+class InitItem extends React.Component {
 
   static propTypes = {
     id: PropTypes.number.isRequired,
@@ -12,6 +13,11 @@ class Item extends React.Component {
     url: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   };
+
+  deleteFromCart = () => {
+    let deletedProduct = this.props;
+    this.props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
+}
 
   render() {
 
@@ -23,11 +29,17 @@ class Item extends React.Component {
         <div className="itemInBasket">{this.props.producer}</div>
         <div className="itemInBasket">{this.props.model}</div>
         <div className="itemInBasket">{this.props.price + " y.e"}</div>
-        <div className="itemInBasket"><button className="deleteButton">Удалить из корзины</button>
+        <div className="itemInBasket"><button className="deleteButton" onClick={this.deleteFromCart}>Удалить из корзины</button>
         </div>
       </div>
     );
   }
 };
+
+const mapStateToProps = function (state) {
+  return { };
+};
+
+const Item = connect(mapStateToProps)(InitItem);
 
 export default Item;
