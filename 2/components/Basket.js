@@ -8,12 +8,12 @@ import './Basket.css'
 class BasketItems extends React.PureComponent {
 
     static propTypes = {
-        initState: PropTypes.array.isRequired,
+        initState: PropTypes.object.isRequired,
     };
 
     render() {
 
-        let items = this.props.initState.map(el =>
+        let items = this.props.initState.basket.map(el =>
             <Item key={el.id}
                 id={el.id}
                 producer={el.producer}
@@ -23,12 +23,11 @@ class BasketItems extends React.PureComponent {
             />
         )
 
-        let totalPrise = this.props.initState.map(el => el.price);
+        let totalPrise = this.props.initState.basket.map(el => el.price);
         let sum = totalPrise.reduce(function (sum, current) {
             return sum + current;
         }, 0);
 
-        console.log(sum);
         return (
             <div>
                 <h1 className="basketHeader">Товары в корзине</h1>

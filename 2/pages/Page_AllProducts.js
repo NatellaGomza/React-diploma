@@ -1,23 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import ProductsList from '../components/ProductsList';
 
-import appData from '../appData';
+class InitPageAllProducts extends React.PureComponent {
 
-class Page_AllProducts extends React.PureComponent {
-          
+  static propTypes = {
+    initState: PropTypes.object.isRequired,
+  };
+
   render() {
-
+    
     return (
       <div>
         <ProductsList
-        item={appData.products}
-      />
+          item={this.props.initState.products}
+        />
       </div>
     );
-    
+
   }
 
 }
-    
+
+const mapStateToProps = function (state) {
+  return {
+    initState: state.basket,
+  };
+};
+
+const Page_AllProducts = connect(mapStateToProps)(InitPageAllProducts);
+
 export default Page_AllProducts;

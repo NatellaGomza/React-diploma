@@ -8,11 +8,11 @@ import './PagesLinks.css';
 class InitPagesLinks extends React.Component {
 
   static propTypes = {
-    initState: PropTypes.array.isRequired,
+    initState: PropTypes.object.isRequired,
 };
 
   render() {
-console.log(this.props.initState.length)
+    
     return (
       <div className="header">
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>
@@ -21,8 +21,7 @@ console.log(this.props.initState.length)
         <NavLink to="/" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>Главная</NavLink>
         <NavLink to="/company" className={obj => ("pageLink" + (obj.isActive ? " activePageLink" : ""))}>О компании</NavLink>
         <NavLink to="/basket" className={obj => ("pageLink" + " button" + (obj.isActive ? " activePageLink" : ""))}>
-        {/* //  <img src = "../cart-arrow-down-solid.svg"></img> */}
-          <span>Корзина(<b>{!this.props.initState.length ? 0 : this.props.initState.length}</b>)</span></NavLink>
+          <span>Корзина(<b>{!this.props.initState.basket.length ? 0 : this.props.initState.basket.length}</b>)</span></NavLink>
       </div>
     );
 

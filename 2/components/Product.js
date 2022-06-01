@@ -15,11 +15,7 @@ class AddProduct extends React.PureComponent {
             category: PropTypes.string.isRequired,
             price: PropTypes.number,
         }),
-        initState: PropTypes.array.isRequired,
-    };
-
-    state = {
-        inBasket: false,
+        isItemInBasket: PropTypes.bool.isRequired,
     };
 
     addToCart = () => {
@@ -68,12 +64,12 @@ class AddProduct extends React.PureComponent {
     // }
 
     render() {
-
-        this.props.initState.forEach(el => {
-            if (el.id === this.props.info.id) {
-                this.setState( {inBasket: true} );
-            }
-        })
+console.log('ffgd')
+    //    this.props.id.forEach(el => {
+    //        if(el === this.props.info.id) {
+    //            return this.setState({inBasket:true})
+    //        }
+    //    })
 
         return (
             <div className='item'>
@@ -81,7 +77,7 @@ class AddProduct extends React.PureComponent {
                 <span className="producer">{this.props.info.producer}</span>
                 <span className="model">{this.props.info.model}</span>
                 <span className="model">{this.props.info.price + " y.e"}</span>
-                {(!this.state.inBasket) ? <button className="addingButton" onClick={this.addToCart}>Добавить в корзину</button> : <button className="addingButton" disabled>Уже в корзине</button>}
+                {(!this.props.isItemInBasket) ? <button className="addingButton" onClick={this.addToCart}>Добавить в корзину</button> : <button className="addingButton" disabled>Уже в корзине</button>}
             </div>
         );
     }
@@ -89,9 +85,7 @@ class AddProduct extends React.PureComponent {
 }
 
 const mapStateToProps = function (state) {
-    return {
-        initState: state.basket,
-    };
+    return {};
 };
 
 const Product = connect(mapStateToProps)(AddProduct);
