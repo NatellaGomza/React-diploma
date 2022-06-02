@@ -29,7 +29,6 @@ class AddProduct extends React.PureComponent {
     }
 
     render() {
-        console.log('ffgd');
 
         return (
             <div className='item'>

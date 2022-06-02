@@ -2,87 +2,97 @@ import React from 'react';
 import { addToBasket } from './events';
 import { deleteFromBasket } from './events';
 import { connect } from 'react-redux';
+import isoFetch from 'isomorphic-fetch';
 
-import Item from './Item';
 import './Basket.css'
 
 class InitBasket extends React.PureComponent {
 
-    dataBaseName = 'GNR_React_Optik_Shop_GAME_DATA';
+    dataBaseName = 'GNR_Optik_Shop_GAME_DATA';
     dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
     updatePassword = null;
     data = [];
     item = null;
-    deletedProduct= null;
+    deletedProduct = null;
 
     componentDidMount = () => {
         this.readStorage();
         deleteFromBasket.addListener("deleteProduct", this.deleteProduct);
         addToBasket.addListener("newProduct", this.addProductToBasket);
-        
     };
 
     deleteProduct = (deleteProduct) => {
         this.deletedProduct = deleteProduct;
         console.log(this.deletedProduct);
-        this.deleteItemFromBasket();
+        this.updateBasket();
+        this.readStorage();
     }
 
     addProductToBasket = (newProduct) => {
         this.item = newProduct;
         this.updateBasket();
-        this.readStorage();
     }
 
-    updateBasket() {
+    updateBasket = async () => {
         this.updatePassword = Math.random();
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-            data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
-            success: this.lockGetReady, error: this.errorHandler
-        });
-    }
 
-    lockGetReady = (callresult) => {
-        let product = this.item;
-        if (product && callresult.result) {
+        let postRequestBeforeUpdate = new URLSearchParams();
+        postRequestBeforeUpdate.append('f', 'LOCKGET');
+        postRequestBeforeUpdate.append('n', this.dataBaseName);
+        postRequestBeforeUpdate.append('p', this.updatePassword);
+
+
+        const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate });
+        if (!response.ok) {
+            this.fetchError("fetch error " + response.status);
+        }
+        else {
+            const data = await response.json();
+            console.log(data);
+            this.lockGetReady(data);
+        }
+    };
+
+    lockGetReady = async (callresult) => {
+        console.log(callresult);
+        if (this.item && callresult.result) {
             this.data = JSON.parse(callresult.result);
             if (this.data) {
-                this.data.push(product);
+                this.data.push(this.item);
             }
         }
 
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
-            data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
-            success: this.updateReady, error: this.errorHandler
-        });
-    }
-
-    deleteItemFromBasket () {
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-            data: { f: 'LOCKGET', n: this.dataBaseName, p: this.updatePassword },
-            success: this.lockGetDeletedReady, error: this.errorHandler
-        });
-    }
-
-    lockGetReady = (callresult) => {
-        let product = this.deletedProduct;
-        if (product && callresult.result) {
-            this.data = JSON.parse(callresult.result).filter(el => {
-                return el.id !=product;
-            });
+        if (this.deletedProduct && callresult.result) {
+            console.log(this.data);
+            this.data = [...JSON.parse(callresult.result)];
             if (this.data) {
-                this.data.push(product);
+                this.data = this.data.filter(el => {
+                    console.log(el);
+                    return el.id !== this.deletedProduct
+                }
+                );
+                console.log(this.data);
             }
         }
+        console.log(this.data);
+        let postRequestUpdate = new URLSearchParams();
+        postRequestUpdate.append('f', 'UPDATE');
+        postRequestUpdate.append('n', this.dataBaseName);
+        postRequestUpdate.append('p', this.updatePassword);
+        postRequestUpdate.append('v', this.data);
 
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json',
-            data: { f: 'UPDATE', n: this.dataBaseName, v: JSON.stringify(this.data), p: this.updatePassword },
-            success: console.log('dsfd'), error: this.errorHandler
-        });
+
+        const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate });
+        if (!response.ok) {
+            this.fetchError("fetch error " + response.status);
+        }
+        else {
+            const data = await response.json();
+            console.log(data);
+            this.saveResult(data);
+        }
+
+        this.deletedProduct = null;
     }
 
     readStorage() {
@@ -95,6 +105,7 @@ class InitBasket extends React.PureComponent {
     }
 
     saveResult = (callresult) => {
+        console.log(callresult.result)
         let newProduct = JSON.parse(callresult.result);
         this.props.dispatch({ type: "addToCart", payload: newProduct });
     }
@@ -104,7 +115,7 @@ class InitBasket extends React.PureComponent {
     }
 
     errorHandler(statusStr, errorStr) {
-        console.log(statusStr + ' ' + errorStr);
+        alert("Ошибка обращения к серверу, повторите попытку позже");
     }
 
     deleteFromCart = () => {

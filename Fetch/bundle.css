@@ -1,5 +1,5 @@
 .photoWrapper {
-    width: calc(20% - 10px);
+    width: 200px;
 }
 
 .photoWrapper h1 {
@@ -40,18 +40,7 @@
     font-size: 1.5vw;
     text-align: center;
     color: #504A40;
-}.header {
-    display: flex;
-    justify-content: space-between;
-    color: #4B4B4B;
-}
-
-.header .logo {
-    width: 30vw;
-    height: 20vh;
-}
-
-.categoryWrapper h1 {
+}.categoryWrapper h1 {
     text-align: center;
     font-size: 3vw;
 }
@@ -71,43 +60,121 @@ text-align: center;
 
 .company p {
     font-size: 1.8vw;
-}.item {
+}.basketItemWrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid rgb(253, 122, 57);
+    border-radius: 10px;
+}
+
+.basketItemWrapper>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.basketItemWrapper img {
+    width: 20vw;
+}
+
+.basketItemWrapper div:first-child {
+    flex-basis: 32%;
+}
+
+.itemInBasket {
+    flex-basis: 17%;
+    border-width: 0px 1px;
+    border-color: rgb(253, 122, 57);
+    border-style: solid;
+    text-align: center;
+}
+
+.deleteButton {
+    height: 50px;
+}
+
+.item-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.item-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+.item-exit {
+    opacity: 1;
+}
+
+.item-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1000ms, transform 1000ms;
+}.basketHeader {
+    text-align: center;
+}
+
+.result {
+    display: flex;
+    width:80%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.result .sum {
+    flex-basis:19%;
+    display:flex;
+    justify-content: center;
+}
+
+.resultText {
+    flex-basis:62%;
+    display:flex;
+    justify-content: flex-end;
+}
+.item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 15px 5px;
     text-align: center;
-    width: calc(20% - 10px);
+    width: 170px;
 }
 
 .producer {
     font-weight: bold;
-    font-size: 5vmin;
+    font-size: 3vmin;
     padding: 5px 0;
     color: #4e4e4e;
+    height:50px;
 }
 
 .model {
     padding: 5px 0;
     color: #959595;
     line-height: 1.5;
-    font-size: 4vmin;
+    font-size: 2.5vmin;
 }
 
 .addingButton {
     width:80%;
     margin: 0 auto;
-    font-size: 4vmin;
+    font-size: 2vmin;
     background-color: aquamarine;
     border:1px solid rgb(4, 209, 141);
     border-radius: 10px;
-    min-height: 30px;
+    min-height: 50px;
 }.wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }.pageLink {
     color: black;
     margin-right: 10px;
+    font-size:3vw;
 }
 
 .activePageLink {
@@ -116,11 +183,23 @@ text-align: center;
 
 .button {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .button img {
     width:20px;
     padding-right:10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #4B4B4B;
+    border-bottom: 2px double grey;
+}
+
+.header .logo {
+    width: 20vw;
+    height: 10vh;
 }
 /*# sourceMappingURL=bundle.css.map*/
