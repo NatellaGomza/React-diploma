@@ -32,8 +32,7 @@ class InitBasket extends React.PureComponent {
         this.item = newProduct;
         this.updateBasket();
     }
-
-    updateBasket = async () => {
+    updateBasket() {
         this.updatePassword = Math.random();
 
         let postRequestBeforeUpdate = new URLSearchParams();
@@ -41,19 +40,13 @@ class InitBasket extends React.PureComponent {
         postRequestBeforeUpdate.append('n', this.dataBaseName);
         postRequestBeforeUpdate.append('p', this.updatePassword);
 
+        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate })
+            .then(response => response.json())
+            .then(data => this.lockGetReady(data))
+            .catch(error => { console.log(error); });
+    }
 
-        const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate });
-        if (!response.ok) {
-            this.fetchError("fetch error " + response.status);
-        }
-        else {
-            const data = await response.json();
-            console.log(data);
-            this.lockGetReady(data);
-        }
-    };
-
-    lockGetReady = async (callresult) => {
+    lockGetReady(callresult) {
         console.log(callresult);
         if (this.item && callresult.result) {
             this.data = JSON.parse(callresult.result);
@@ -74,7 +67,7 @@ class InitBasket extends React.PureComponent {
                 console.log(this.data);
             }
         }
-        console.log(this.data);
+
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'UPDATE');
         postRequestUpdate.append('n', this.dataBaseName);
@@ -82,40 +75,99 @@ class InitBasket extends React.PureComponent {
         postRequestUpdate.append('v', this.data);// вот тут нужно первый раз положить пустой массив
 
 
-        const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate });
-        if (!response.ok) {
-            this.fetchError("fetch error " + response.status);
-        }
-        else {
-            const data = await response.json();
-            console.log(data);
-            this.saveResult(data);
-        }
+        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
+            .then(response => response.json())
+            .then(data => this.saveResult(data))
+            .catch(error => { console.log(error); });
 
         this.deletedProduct = null;
     }
 
+
+    // fetch(ajaxHandlerScript, { method: 'post', body: sp })
+    // .then( response => response.json() )
+    // .then( data => { lockGetReady; } )
+    // .catch( error => { console.error(error); } );
+
+    // updateBasket = async () => {
+    //     this.updatePassword = Math.random();
+
+    //     let postRequestBeforeUpdate = new URLSearchParams();
+    //     postRequestBeforeUpdate.append('f', 'LOCKGET');
+    //     postRequestBeforeUpdate.append('n', this.dataBaseName);
+    //     postRequestBeforeUpdate.append('p', this.updatePassword);
+
+
+    //     const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate });
+    //     if (!response.ok) {
+    //         this.fetchError("fetch error " + response.status);
+    //     }
+    //     else {
+    //         const data = await response.json();
+    //         console.log("fetch update");
+    //         this.lockGetReady(data);
+    //     }
+    // };
+
+    // lockGetReady = async (callresult) => {
+    //     console.log(callresult.result);
+    //     if (this.item && callresult.result) {
+    //         this.data = JSON.parse(callresult.result);
+    //         if (this.data) {
+    //             this.data.push(this.item);
+    //         }
+    //     }
+
+    //     if (this.deletedProduct && callresult.result) {
+    //         console.log(this.data);
+    //         this.data = JSON.parse(callresult.result);
+    //         if (this.data) {
+    //             this.data = this.data.filter(el => {
+    //                 console.log(el);
+    //                 return el.id !== this.deletedProduct
+    //             }
+    //             );
+    //             console.log(this.data);
+    //         }
+    //     }
+    //     console.log(this.data);
+    //     let postRequestUpdate = new URLSearchParams();
+    //     postRequestUpdate.append('f', 'UPDATE');
+    //     postRequestUpdate.append('n', this.dataBaseName);
+    //     postRequestUpdate.append('p', this.updatePassword);
+    //     postRequestUpdate.append('v', this.data);// вот тут нужно первый раз положить пустой массив
+
+
+    //     const updateResponse = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate });
+    //     console.log(updateResponse);
+    //     if (!updateResponse.ok) {
+    //         this.fetchError("fetch error " + response.status);
+    //     }
+    //     else {
+    //         const data = await updateResponse.json();
+    //         console.log(data);
+    //         this.saveResult(data);
+    //     }
+
+    //     this.deletedProduct = null;
+    // }
+
     readStorage() {
-        console.log('fdgf')
-        $.ajax({
-            url: this.dataBaseServerURL, type: 'POST', cache: false, dataType: 'json', async: false,
-            data: { f: 'READ', n: this.dataBaseName },
-            success: this.saveResult, error: this.errorHandler
-        });
+        let postRequestUpdate = new URLSearchParams();
+        postRequestUpdate.append('f', 'READ');
+        postRequestUpdate.append('n', this.dataBaseName);
+        postRequestUpdate.append('p', this.updatePassword);
+
+        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
+            .then(response => response.json())
+            .then(data => this.saveResult(data))
+            .catch(error => {console.log(error); });
     }
 
-    saveResult = (callresult) => {
+    saveResult(callresult) {
         console.log(callresult.result)
         let newProduct = JSON.parse(callresult.result);
         this.props.dispatch({ type: "addToCart", payload: newProduct });
-    }
-
-    updateReady(callresult) {
-        console.log(callresult);
-    }
-
-    errorHandler(statusStr, errorStr) {
-        alert("Ошибка обращения к серверу, повторите попытку позже");
     }
 
     deleteFromCart = () => {
@@ -126,32 +178,8 @@ class InitBasket extends React.PureComponent {
 
     render() {
 
-        // let items = this.props.initState.basket.map(el =>
-        //     <Item key={el.id}
-        //         id={el.id}
-        //         producer={el.producer}
-        //         model={el.model}
-        //         url={el.url}
-        //         price={el.price}
-        //     />
-        // )
-
-        // let totalPrise = this.props.initState.basket.map(el => el.price);
-        // let sum = totalPrise.reduce(function (sum, current) {
-        //     return sum + current;
-        // }, 0);
-
         return (
             <div></div>
-            // <div>
-            //     <h1 className="basketHeader">Товары в корзине</h1>
-            //     {(!!items.length) ? <div>{items}</div> : <p>Корзина пуста</p>}
-            //     {(!!items.length) &&
-            //         <div className="result">
-            //             <div className="resultText">Итого:</div>
-            //             <div className="sum">{sum + " y.e"}</div>
-            //         </div>}
-            // </div>
         )
     }
 }
