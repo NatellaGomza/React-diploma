@@ -64,7 +64,7 @@ class InitBasket extends React.PureComponent {
 
         if (this.deletedProduct && callresult.result) {
             console.log(this.data);
-            this.data = [...JSON.parse(callresult.result)];
+            this.data = JSON.parse(callresult.result);
             if (this.data) {
                 this.data = this.data.filter(el => {
                     console.log(el);
@@ -79,7 +79,7 @@ class InitBasket extends React.PureComponent {
         postRequestUpdate.append('f', 'UPDATE');
         postRequestUpdate.append('n', this.dataBaseName);
         postRequestUpdate.append('p', this.updatePassword);
-        postRequestUpdate.append('v', this.data);
+        postRequestUpdate.append('v', this.data);// вот тут нужно первый раз положить пустой массив
 
 
         const response = await isoFetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate });
