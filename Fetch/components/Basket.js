@@ -45,7 +45,10 @@ class InitBasket extends React.PureComponent {
     }
 
     lockGetReady(callresult) {
-        console.log(callresult);
+        if (callresult.error) {
+            alert("Ошибка сервера! Повторите попытку позднее!");
+        }
+       
         if (this.item && callresult.result) {
             this.data = JSON.parse(callresult.result);
             if (this.data) {
@@ -73,10 +76,15 @@ class InitBasket extends React.PureComponent {
 
         fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
             .then(response => response.json())
-            .then(data => this.readStorage())
+            .then(data => this.updateRedux())
             .catch(error => alert("Ошибка сервера! Повторите попытку позднее!"));
 
         this.deletedProduct = null;
+    }
+
+    updateRedux () {
+        this.props.dispatch({ type: "addToCart", payload: this.data });
+        this.readStorage();
     }
 
     readStorage() {
