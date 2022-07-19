@@ -64,6 +64,7 @@ class InitBasket extends React.PureComponent {
                 });
             }
         }
+    
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'UPDATE');
         postRequestUpdate.append('n', this.dataBaseName);

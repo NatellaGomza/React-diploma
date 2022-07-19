@@ -26,7 +26,7 @@ class InitItem extends React.Component {
 
   render() {
 
-    return (   
+    return (
         <div className="basketItemWrapper">
           <div>
             <img src={this.props.url}></img>
