@@ -15,10 +15,6 @@ class InitItem extends React.Component {
     price: PropTypes.number.isRequired,
   };
 
-  state = {
-    deleteItem: false,
-  }
-
   deleteFromCart = () => {      
     let deletedProduct = this.props.id;
     deleteFromBasket.emit("deleteProduct", deletedProduct);

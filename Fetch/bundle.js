@@ -7552,9 +7552,7 @@ var InitItem = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InitItem.__proto__ || Object.getPrototypeOf(InitItem)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      deleteItem: false
-    }, _this.deleteFromCart = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InitItem.__proto__ || Object.getPrototypeOf(InitItem)).call.apply(_ref, [this].concat(args))), _this), _this.deleteFromCart = function () {
       var deletedProduct = _this.props.id;
       _events.deleteFromBasket.emit("deleteProduct", deletedProduct);
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -7565,39 +7563,35 @@ var InitItem = function (_React$Component) {
     value: function render() {
 
       return _react2.default.createElement(
-        CSSTransition,
-        { 'in': this.state.deleteItem, timeout: 500, classNames: 'item' },
+        'div',
+        { className: 'basketItemWrapper' },
         _react2.default.createElement(
           'div',
-          { className: 'basketItemWrapper' },
+          null,
+          _react2.default.createElement('img', { src: this.props.url })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'itemInBasket' },
+          this.props.producer
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'itemInBasket' },
+          this.props.model
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'itemInBasket' },
+          this.props.price + " y.e"
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'itemInBasket' },
           _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement('img', { src: this.props.url })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'itemInBasket' },
-            this.props.producer
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'itemInBasket' },
-            this.props.model
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'itemInBasket' },
-            this.props.price + " y.e"
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'itemInBasket' },
-            _react2.default.createElement(
-              'button',
-              { className: 'deleteButton', onClick: this.deleteFromCart },
-              '\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0438\u0437 \u043A\u043E\u0440\u0437\u0438\u043D\u044B'
-            )
+            'button',
+            { className: 'deleteButton', onClick: this.deleteFromCart },
+            '\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0438\u0437 \u043A\u043E\u0440\u0437\u0438\u043D\u044B'
           )
         )
       );
@@ -46368,7 +46362,6 @@ function basketReducer() {
     case "deleteFromCart":
       {
         var _newState = _extends({}, state);
-        console.log(_newState);
         _newState.basket = _newState.basket.filter(function (el) {
           return el.id !== item.id;
         });
@@ -48064,17 +48057,13 @@ var InitBasket = function (_React$PureComponent) {
             }
 
             if (this.deletedProduct && callresult.result) {
-                console.log(this.data);
                 this.data = JSON.parse(callresult.result);
                 if (this.data) {
                     this.data = this.data.filter(function (el) {
-                        console.log(el);
                         return el.id !== _this3.deletedProduct;
                     });
-                    console.log(this.data);
                 }
             }
-            console.log(this.data);
             var postRequestUpdate = new URLSearchParams();
             postRequestUpdate.append('f', 'UPDATE');
             postRequestUpdate.append('n', this.dataBaseName);
@@ -48120,10 +48109,8 @@ var InitBasket = function (_React$PureComponent) {
     }, {
         key: 'readData',
         value: function readData(data) {
-            console.log(data.result);
             if (!data.result) {
                 this.data = [];
-                console.log(this.data);
                 this.updateBasket();
             } else {
                 this.data = JSON.parse(data.result);
