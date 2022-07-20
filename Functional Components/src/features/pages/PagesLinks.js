@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './PagesLinks.css';
 
 function InitPagesLinks(props) {
-
+  console.log("render pagelinks");
   return (
     <div className="header">
       <div>

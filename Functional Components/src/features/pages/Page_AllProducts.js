@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ProductsList from '../components/ProductsList';
 
 function InitPageAllProducts(props) {
-
+  console.log("render pageallproducts");
   return (
     <ProductsList
       item={props.initState.products}
