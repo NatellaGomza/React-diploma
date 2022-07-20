@@ -19,10 +19,6 @@ class AddProduct extends React.PureComponent {
         isItemInBasket: PropTypes.bool.isRequired,
     };
 
-        state = {
-        inBasket: false,
-    };
-
     addToCart = () => {      
         let newProduct = this.props.info;
         addToBasket.emit("newProduct", newProduct);
