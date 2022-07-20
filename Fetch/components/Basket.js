@@ -15,6 +15,7 @@ class InitBasket extends React.PureComponent {
     deletedProduct = null;
 
     componentDidMount = () => {
+        console.log("dfd")
         this.readStorage();
         deleteFromBasket.addListener("deleteProduct", this.deleteProduct);
         addToBasket.addListener("newProduct", this.addProductToBasket);
@@ -45,6 +46,7 @@ class InitBasket extends React.PureComponent {
     }
 
     lockGetReady(callresult) {
+        console.log(callresult);
         if (callresult.error) {
             alert("Ошибка сервера! Повторите попытку позднее!");
         }
@@ -105,12 +107,6 @@ class InitBasket extends React.PureComponent {
             this.data = JSON.parse(data.result);
             this.props.dispatch({ type: "addToCart", payload: this.data });
         }
-    }
-
-    deleteFromCart = () => {
-        let deletedProduct = this.props;
-        this.setState({ deleteItem: true });
-        this.props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
     }
 
     render() {

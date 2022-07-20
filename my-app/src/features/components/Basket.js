@@ -1,125 +1,122 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { addToBasket } from './events';
 import { deleteFromBasket } from './events';
 import { connect } from 'react-redux';
 
 import './Basket.css'
 
-class InitBasket extends React.PureComponent {
+function InitBasket(props) {
 
-    dataBaseName = 'GNR_React_Shop_GAME_DATA';
-    dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
-    updatePassword = null;
-    data = [];
-    item = null;
-    deletedProduct = null;
+    const dataBaseName = 'GNR_React_Shop_GAME_DATA';
+    const dataBaseServerURL = "https://fe.it-academy.by/AjaxStringStorage2.php";
+    let updatePassword = null;
+    let data = [];
+    let item = null;
+    let deletedProduct = null;
 
-    componentDidMount = () => {
-        this.readStorage();
-        deleteFromBasket.addListener("deleteProduct", this.deleteProduct);
-        addToBasket.addListener("newProduct", this.addProductToBasket);
-    };
+    useEffect(() => {
+        readStorage();
+        deleteFromBasket.addListener("deleteProduct", deleteProduct);
+        addToBasket.addListener("newProduct", addProductToBasket);
+    })       
 
-    deleteProduct = (deleteProduct) => {
-        this.deletedProduct = deleteProduct;
-        this.updateBasket();
+    const deleteProduct = (deleteProduct) => {
+        deletedProduct = deleteProduct;
+        updateBasket();
     }
 
-    addProductToBasket = (newProduct) => {
-        this.item = newProduct;
-        this.updateBasket();
+    const addProductToBasket = (newProduct) => {
+        item = newProduct;
+        updateBasket();
     }
 
-    updateBasket() {
-        this.updatePassword = Math.random();
+    const updateBasket= () => {
+        updatePassword = Math.random();
 
         let postRequestBeforeUpdate = new URLSearchParams();
         postRequestBeforeUpdate.append('f', 'LOCKGET');
-        postRequestBeforeUpdate.append('n', this.dataBaseName);
-        postRequestBeforeUpdate.append('p', this.updatePassword);
+        postRequestBeforeUpdate.append('n', dataBaseName);
+        postRequestBeforeUpdate.append('p', updatePassword);
 
-        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate })
+        fetch(dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate })
             .then(response => response.json())
-            .then(data => this.lockGetReady(data))
+            .then(data => lockGetReady(data))
             .catch(error => {alert("Ошибка сервера! Повторите попытку позднее!")});
     }
 
-    lockGetReady(callresult) {
+    const lockGetReady = (callresult) => {
         if (callresult.error) {
             alert("Ошибка сервера! Повторите попытку позднее!");
         }
        
-        if (this.item && callresult.result) {
-            this.data = JSON.parse(callresult.result);
-            if (this.data) {
-                this.data.push(this.item);
+        if (item && callresult.result) {
+            data = JSON.parse(callresult.result);
+            if (data) {
+               data.push(item);
             }
         }
 
-        if (this.deletedProduct && callresult.result) {
-            this.data = JSON.parse(callresult.result);
-            if (this.data) {
-                this.data = this.data.filter(el => {
-                    return el.id !== this.deletedProduct
+        if (deletedProduct && callresult.result) {
+            data = JSON.parse(callresult.result);
+            if (data) {
+                data = data.filter(el => {
+                    return el.id !== deletedProduct
                 });
             }
         }
     
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'UPDATE');
-        postRequestUpdate.append('n', this.dataBaseName);
-        postRequestUpdate.append('p', this.updatePassword);
-        postRequestUpdate.append('v', JSON.stringify(this.data));// вот тут нужно первый раз положить пустой массив
+        postRequestUpdate.append('n', dataBaseName);
+        postRequestUpdate.append('p', updatePassword);
+        postRequestUpdate.append('v', JSON.stringify(data));
 
-        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
+        fetch(dataBaseServerURL, { method: 'post', body: postRequestUpdate })
             .then(response => response.json())
-            .then(data => this.updateRedux())
+            .then(data => updateRedux())
             .catch(error => alert("Ошибка сервера! Повторите попытку позднее!"));
 
-        this.deletedProduct = null;
+       deletedProduct = null;
     }
 
-    updateRedux () {
-        this.props.dispatch({ type: "addToCart", payload: this.data });
-        this.readStorage();
+    const updateRedux = () => {
+        props.dispatch({ type: "addToCart", payload: data });
+        readStorage();
     }
 
-    readStorage() {
-        this.updatePassword = Math.random();
+    const readStorage = () => {
+        updatePassword = Math.random();
 
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'READ');
-        postRequestUpdate.append('n', this.dataBaseName);
-        postRequestUpdate.append('p', this.updatePassword);
+        postRequestUpdate.append('n', dataBaseName);
+        postRequestUpdate.append('p', updatePassword);
 
-        fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
+        fetch(dataBaseServerURL, { method: 'post', body: postRequestUpdate })
             .then(response => response.json())
-            .then(data => this.readData(data))
+            .then(data => readData(data))
             .catch(error => alert("Ошибка сервера! Повторите попытку позднее!"));
     }
 
-    readData(data) {
+    const readData = (data) => {
         if (!data.result) {
-            this.data = [];
-            this.updateBasket();
+            data = [];
+            updateBasket();
         } else {
-            this.data = JSON.parse(data.result);
-            this.props.dispatch({ type: "addToCart", payload: this.data });
+            data = JSON.parse(data.result);
+            props.dispatch({ type: "addToCart", payload: data });
         }
     }
 
-    deleteFromCart = () => {
-        let deletedProduct = this.props;
-        this.setState({ deleteItem: true });
-        this.props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
+    const deleteFromCart = () => {
+        let deletedProduct = props;
+        props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
     }
 
-    render() {
         return (
             <div></div>
         )
     }
-}
 
 const mapStateToProps = function (state) {
     return {};
