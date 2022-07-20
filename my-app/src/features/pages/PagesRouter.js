@@ -7,9 +7,7 @@ import Page_Basket from './Page_Basket';
 import Page_ProductsList from './Page_ProductsList';
 import Page_AllProducts from './Page_AllProducts';
 
-class PagesRouter extends React.Component {
-
-  render() {
+function PagesRouter() {
 
     return (
         <Routes>
@@ -21,6 +19,5 @@ class PagesRouter extends React.Component {
         </Routes>
     );
   }
-}
 
 export default PagesRouter;

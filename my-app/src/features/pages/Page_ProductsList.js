@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ProductsList from '../components/ProductsList';
@@ -10,15 +9,10 @@ const withRouter = Component => props => {
   return <Component {...props} params={params} />;
 };
 
-class InitPageProductsList extends React.PureComponent {
+function InitPageProductsList(props){
 
-  static propTypes = {
-    initState: PropTypes.object.isRequired,
-  };
-
-  render() {
-    let productId = this.props.params.item;
-    let productData = this.props.initState.products.filter(el => el.category == productId);
+    const productId = props.params.item;
+    const productData = props.initState.products.filter(el => el.category == productId);
 
     return (
         <ProductsList
@@ -26,9 +20,9 @@ class InitPageProductsList extends React.PureComponent {
         />
     );
   }
-}
 
 const mapStateToProps = function (state) {
+  
   return {
       initState: state.basket,
   };

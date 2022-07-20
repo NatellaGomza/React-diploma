@@ -1,30 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import CategoryWrapper from '../components/CategoryWrapper';
 
-class InitPageAbout extends React.PureComponent {
+function InitPageAbout(props) {
 
-  static propTypes = {
-    initState: PropTypes.object.isRequired,
-};
-
-  render() {
-    
-    return (
-      <CategoryWrapper
-        header={this.props.initState.header}
-        categories={this.props.initState.categoryInfo}
-      />
-      );
-  }
-
+  return (
+    <CategoryWrapper
+      header={props.initState.header}
+      categories={props.initState.categoryInfo}
+    />
+  );
 }
+
 
 const mapStateToProps = function (state) {
   return {
-      initState: state.basket,
+    initState: state.basket,
   };
 };
 

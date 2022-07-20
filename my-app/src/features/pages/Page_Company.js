@@ -2,18 +2,14 @@ import React from 'react';
 
 import Company from '../components/Company';
 
-let companyDescription = require('../about.json')
+function Page_Company() {
 
-class Page_Company extends React.PureComponent {
+  const companyDescription = require('../about.json')
 
-  render() {
-    return (
-        <Company header={companyDescription.header}
-          text={companyDescription.text} />
-    );
-
-  }
-
+  return (
+    <Company header={companyDescription.header}
+      text={companyDescription.text} />
+  );
 }
 
 export default Page_Company;
