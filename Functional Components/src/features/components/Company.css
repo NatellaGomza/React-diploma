@@ -9,3 +9,6 @@ text-align: center;
 .company p {
     font-size: 1.8vw;
 }
+.company {
+    margin-top: 100px;
+}

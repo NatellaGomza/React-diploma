@@ -15,7 +15,6 @@ class InitBasket extends React.PureComponent {
     deletedProduct = null;
 
     componentDidMount = () => {
-        console.log("dfd")
         this.readStorage();
         deleteFromBasket.addListener("deleteProduct", this.deleteProduct);
         addToBasket.addListener("newProduct", this.addProductToBasket);
@@ -42,7 +41,7 @@ class InitBasket extends React.PureComponent {
         fetch(this.dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate })
             .then(response => response.json())
             .then(data => this.lockGetReady(data))
-            .catch(error => {alert("Ошибка сервера! Повторите попытку позднее!")});
+            .catch(error => { alert("Ошибка сервера! Повторите попытку позднее!") });
     }
 
     lockGetReady(callresult) {
@@ -50,7 +49,7 @@ class InitBasket extends React.PureComponent {
         if (callresult.error) {
             alert("Ошибка сервера! Повторите попытку позднее!");
         }
-       
+
         if (this.item && callresult.result) {
             this.data = JSON.parse(callresult.result);
             if (this.data) {
@@ -66,6 +65,7 @@ class InitBasket extends React.PureComponent {
                 });
             }
         }
+
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'UPDATE');
         postRequestUpdate.append('n', this.dataBaseName);
@@ -74,13 +74,17 @@ class InitBasket extends React.PureComponent {
 
         fetch(this.dataBaseServerURL, { method: 'post', body: postRequestUpdate })
             .then(response => response.json())
-            .then(data => this.updateRedux())
+            .then((data) => {
+                if (!!data.result) {
+                    updateRedux(data)
+                }
+            })
             .catch(error => alert("Ошибка сервера! Повторите попытку позднее!"));
 
         this.deletedProduct = null;
     }
 
-    updateRedux () {
+    updateRedux() {
         this.props.dispatch({ type: "addToCart", payload: this.data });
         this.readStorage();
     }

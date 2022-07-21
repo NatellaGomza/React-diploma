@@ -1,7 +1,7 @@
 .pageLink {
     color: black;
     margin-right: 10px;
-    font-size:3vw;
+    font-size: 3vw;
 }
 
 .activePageLink {
@@ -14,8 +14,8 @@
 }
 
 .button img {
-    width:20px;
-    padding-right:10px;
+    width: 20px;
+    padding-right: 10px;
 }
 
 .header {
@@ -23,6 +23,12 @@
     justify-content: space-between;
     color: #4B4B4B;
     border-bottom: 2px double grey;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    background-color: aliceblue;
 }
 
 .header .logo {
