@@ -12,7 +12,7 @@ function AddProduct(props) {
     }
 
     return (
-        <div className='item'>
+        <div className='itemProduct'>
             <img src={props.info.url} alt={props.info.model} />
             <span className="producer">{props.info.producer}</span>
             <span className="model">{props.info.model}</span>

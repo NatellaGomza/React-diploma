@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import CategoryWrapper from '../components/CategoryWrapper';
 
 function InitPageAbout(props) {
-console.log("render pageabout");
   return (
     <CategoryWrapper
       header={props.initState.header}

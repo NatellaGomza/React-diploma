@@ -10,7 +10,6 @@ const withRouter = Component => props => {
 };
 
 function InitPageProductsList(props){
-  console.log("render pageproductslist");
     const productId = props.params.item;
     const productData = props.initState.products.filter(el => el.category == productId);
 

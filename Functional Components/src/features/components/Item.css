@@ -31,24 +31,3 @@
 .deleteButton {
     height: 50px;
 }
-
-.item-enter {
-    opacity: 0;
-    transform: scale(0.9);
-}
-
-.item-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 1000ms, transform 1000ms;
-}
-
-.item-exit {
-    opacity: 1;
-}
-
-.item-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 1000ms, transform 1000ms;
-}

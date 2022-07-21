@@ -18,7 +18,7 @@ function InitBasket(props) {
         readStorage();
         deleteFromBasket.addListener("deleteProduct", deleteProduct);
         addToBasket.addListener("newProduct", addProductToBasket);
-    })       
+    })
 
     const deleteProduct = (deleteProduct) => {
         deletedProduct = deleteProduct;
@@ -30,7 +30,7 @@ function InitBasket(props) {
         updateBasket();
     }
 
-    const updateBasket= () => {
+    const updateBasket = () => {
         updatePassword = Math.random();
 
         let postRequestBeforeUpdate = new URLSearchParams();
@@ -41,18 +41,18 @@ function InitBasket(props) {
         fetch(dataBaseServerURL, { method: 'post', body: postRequestBeforeUpdate })
             .then(response => response.json())
             .then(data => lockGetReady(data))
-            .catch(error => {alert("Ошибка сервера! Повторите попытку позднее!")});
+            .catch(error => { alert("Ошибка сервера! Повторите попытку позднее!") });
     }
 
     const lockGetReady = (callresult) => {
         if (callresult.error) {
             alert("Ошибка сервера! Повторите попытку позднее!");
         }
-       
+
         if (item && callresult.result) {
             data = JSON.parse(callresult.result);
             if (data) {
-               data.push(item);
+                data.push(item);
             }
         }
 
@@ -64,7 +64,7 @@ function InitBasket(props) {
                 });
             }
         }
-    
+
         let postRequestUpdate = new URLSearchParams();
         postRequestUpdate.append('f', 'UPDATE');
         postRequestUpdate.append('n', dataBaseName);
@@ -76,7 +76,7 @@ function InitBasket(props) {
             .then(data => updateRedux())
             .catch(error => alert("Ошибка сервера! Повторите попытку позднее!"));
 
-       deletedProduct = null;
+        deletedProduct = null;
     }
 
     const updateRedux = () => {
@@ -113,10 +113,10 @@ function InitBasket(props) {
         props.dispatch({ type: "deleteFromCart", payload: deletedProduct });
     }
 
-        return (
-            <div></div>
-        )
-    }
+    return (
+        <></>
+    )
+}
 
 const mapStateToProps = function (state) {
     return {};
